@@ -1,1494 +1,1397 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>ChennaigotInteresting 🎉</title>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎉</text></svg>">
-  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --primary: #E63946; --primary-dark: #C1121F; --primary-light: #ff6b6b;
-      --secondary: #457B9D; --accent: #F4A261;
-      --bg: #F8FAFC; --card: #FFFFFF; --text: #1E293B; --text-2: #475569;
-      --text-3: #94A3B8; --border: #E2E8F0; --success: #10B981;
-      --radius: 12px; --radius-sm: 8px; --radius-full: 999px;
-      --shadow: 0 1px 3px rgba(0,0,0,.1),0 1px 2px rgba(0,0,0,.06);
-      --shadow-md: 0 4px 6px rgba(0,0,0,.07),0 2px 4px rgba(0,0,0,.06);
-      --shadow-lg: 0 10px 15px rgba(0,0,0,.1),0 4px 6px rgba(0,0,0,.05);
-    }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-      background: #CBD5E1; color: var(--text); min-height: 100vh;
-      display: flex; justify-content: center; -webkit-font-smoothing: antialiased;
-    }
-    #root { width: 100%; max-width: 430px; min-height: 100vh; background: var(--bg); position: relative; box-shadow: 0 0 40px rgba(0,0,0,.2); }
-    ::-webkit-scrollbar { width: 3px; } ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>ChennaigotInteresting</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎉</text></svg>">
+<script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --red:#E63946;--red-d:#C1121F;--red-l:#ff6b6b;
+  --blue:#457B9D;--amber:#F4A261;--green:#10B981;
+  --bg:#F1F5F9;--card:#fff;--text:#0F172A;--t2:#475569;--t3:#94A3B8;
+  --border:#E2E8F0;--r:12px;--rs:8px;--rf:999px;
+  --sh:0 1px 3px rgba(0,0,0,.1),0 1px 2px rgba(0,0,0,.06);
+  --shm:0 4px 6px rgba(0,0,0,.07),0 2px 4px rgba(0,0,0,.05);
+}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#CBD5E1;color:var(--text);min-height:100vh;display:flex;justify-content:center;-webkit-font-smoothing:antialiased}
+#root{width:100%;max-width:430px;min-height:100vh;background:var(--bg);box-shadow:0 0 40px rgba(0,0,0,.2);overflow:hidden}
+::-webkit-scrollbar{width:3px}::-webkit-scrollbar-thumb{background:var(--border)}
 
-    /* LAYOUT */
-    .app { display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
-    .app-header { background: var(--primary); color: white; padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; z-index: 50; }
-    .header-left { display: flex; flex-direction: column; }
-    .header-title { font-size: 17px; font-weight: 800; letter-spacing: -0.3px; }
-    .header-sub { font-size: 11px; opacity: .8; }
-    .header-actions { display: flex; gap: 8px; align-items: center; }
-    .icon-btn { background: rgba(255,255,255,.2); border: none; color: white; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 16px; transition: background .15s; -webkit-tap-highlight-color: transparent; }
-    .icon-btn:active { background: rgba(255,255,255,.35); }
-    .content { flex: 1; overflow-y: auto; -webkit-overflow-scrolling: touch; padding-bottom: 72px; }
+/* LAYOUT */
+.app{display:flex;flex-direction:column;height:100vh;overflow:hidden}
+.content{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;padding-bottom:68px}
+.header{background:var(--red);color:#fff;padding:12px 16px;display:flex;align-items:center;gap:10px;flex-shrink:0}
+.header-title{font-size:17px;font-weight:800;flex:1;letter-spacing:-.2px}
+.header-sub{font-size:11px;opacity:.8;margin-top:1px}
+.icon-btn{background:rgba(255,255,255,.18);border:none;color:#fff;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:16px;flex-shrink:0;-webkit-tap-highlight-color:transparent}
+.icon-btn:active{background:rgba(255,255,255,.32)}
 
-    /* BOTTOM NAV */
-    .bottom-nav { position: fixed; bottom: 0; left: 50%; transform: translateX(-50%); width: 100%; max-width: 430px; background: white; border-top: 1px solid var(--border); display: grid; grid-template-columns: repeat(4,1fr); z-index: 100; box-shadow: 0 -4px 12px rgba(0,0,0,.08); }
-    .nav-btn { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; padding: 8px 4px 10px; border: none; background: none; cursor: pointer; -webkit-tap-highlight-color: transparent; min-height: 56px; }
-    .nav-icon { font-size: 22px; position: relative; }
-    .nav-label { font-size: 10px; font-weight: 500; color: var(--text-3); }
-    .nav-btn.active .nav-label { color: var(--primary); font-weight: 700; }
-    .notif-dot { position: absolute; top: -2px; right: -4px; width: 8px; height: 8px; background: var(--primary); border-radius: 50%; border: 1.5px solid white; }
+/* BOTTOM NAV */
+.nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;background:#fff;border-top:1px solid var(--border);display:grid;grid-template-columns:repeat(4,1fr);z-index:100;box-shadow:0 -2px 12px rgba(0,0,0,.08)}
+.nav-btn{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;padding:8px 4px 10px;border:none;background:none;cursor:pointer;-webkit-tap-highlight-color:transparent;min-height:56px}
+.nav-icon{font-size:21px;position:relative;display:inline-block}
+.nav-label{font-size:10px;font-weight:500;color:var(--t3)}
+.nav-btn.on .nav-label{color:var(--red);font-weight:700}
+.n-dot{position:absolute;top:-2px;right:-4px;width:8px;height:8px;background:var(--red);border-radius:50%;border:1.5px solid #fff}
 
-    /* BUTTONS */
-    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; padding: 12px 20px; border-radius: var(--radius-full); border: none; font-size: 14px; font-weight: 600; cursor: pointer; transition: all .15s; -webkit-tap-highlight-color: transparent; white-space: nowrap; }
-    .btn:active { transform: scale(.97); }
-    .btn-primary { background: var(--primary); color: white; }
-    .btn-primary:hover { background: var(--primary-dark); }
-    .btn-outline { background: white; color: var(--primary); border: 1.5px solid var(--primary); }
-    .btn-ghost { background: var(--bg); color: var(--text-2); }
-    .btn-success { background: var(--success); color: white; }
-    .btn-full { width: 100%; }
-    .btn-sm { padding: 8px 14px; font-size: 13px; }
-    .btn-lg { padding: 14px 28px; font-size: 16px; }
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:11px 20px;border-radius:var(--rf);border:none;font-size:14px;font-weight:600;cursor:pointer;transition:all .15s;-webkit-tap-highlight-color:transparent;white-space:nowrap;font-family:inherit}
+.btn:active{transform:scale(.97)}
+.btn-red{background:var(--red);color:#fff}.btn-red:hover{background:var(--red-d)}
+.btn-out{background:#fff;color:var(--red);border:1.5px solid var(--red)}
+.btn-ghost{background:var(--bg);color:var(--t2)}
+.btn-green{background:var(--green);color:#fff}
+.btn-w{width:100%}
+.btn-sm{padding:8px 14px;font-size:13px}
+.btn-lg{padding:14px 24px;font-size:16px}
 
-    /* ONBOARDING */
-    .onboarding { min-height: 100vh; display: flex; flex-direction: column; background: white; }
-    .ob-hero { background: var(--primary); padding: 56px 24px 36px; color: white; text-align: center; }
-    .ob-logo { font-size: 52px; margin-bottom: 12px; }
-    .ob-app-name { font-size: 22px; font-weight: 800; margin-bottom: 4px; }
-    .ob-tagline { font-size: 13px; opacity: .85; line-height: 1.5; }
-    .ob-progress { display: flex; gap: 6px; justify-content: center; padding: 20px 24px 0; }
-    .ob-dot { height: 6px; border-radius: 3px; background: var(--border); transition: all .3s; }
-    .ob-dot.done { background: var(--success); width: 18px; }
-    .ob-dot.active { background: var(--primary); width: 28px; }
-    .ob-dot.pending { width: 8px; }
-    .ob-body { flex: 1; padding: 24px; overflow-y: auto; }
-    .ob-title { font-size: 21px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
-    .ob-sub { font-size: 14px; color: var(--text-2); margin-bottom: 22px; line-height: 1.5; }
-    .ob-footer { padding: 16px 24px 32px; display: flex; gap: 10px; }
+/* ONBOARDING */
+.ob{min-height:100vh;display:flex;flex-direction:column;background:#fff}
+.ob-hero{background:var(--red);padding:52px 24px 32px;text-align:center;color:#fff}
+.ob-logo{font-size:52px;margin-bottom:10px}
+.ob-name{font-size:21px;font-weight:800;margin-bottom:4px}
+.ob-tag{font-size:13px;opacity:.85;line-height:1.5}
+.ob-prog{display:flex;gap:6px;justify-content:center;padding:18px 24px 0}
+.ob-d{height:6px;border-radius:3px;background:var(--border);transition:all .3s}
+.ob-d.done{background:var(--green);width:20px}
+.ob-d.on{background:var(--red);width:28px}
+.ob-d.off{width:8px}
+.ob-body{flex:1;padding:24px;overflow-y:auto}
+.ob-t{font-size:21px;font-weight:700;margin-bottom:6px}
+.ob-s{font-size:14px;color:var(--t2);margin-bottom:20px;line-height:1.5}
+.ob-foot{padding:16px 24px 32px;display:flex;gap:10px}
 
-    /* CITY CARDS */
-    .city-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px; }
-    .city-card { border: 2px solid var(--border); border-radius: var(--radius); padding: 20px 12px; text-align: center; cursor: pointer; background: white; transition: all .2s; -webkit-tap-highlight-color: transparent; }
-    .city-card:active { transform: scale(.97); }
-    .city-card.selected { border-color: var(--primary); background: #FFF0F1; }
-    .city-card-emoji { font-size: 40px; margin-bottom: 8px; }
-    .city-card-name { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 2px; }
-    .city-card-desc { font-size: 11px; color: var(--text-2); }
+/* CITY/LANG CARDS */
+.city-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px}
+.city-card{border:2px solid var(--border);border-radius:var(--r);padding:20px 12px;text-align:center;cursor:pointer;background:#fff;transition:all .2s;-webkit-tap-highlight-color:transparent}
+.city-card:active{transform:scale(.97)}
+.city-card.sel{border-color:var(--red);background:#FFF0F1}
+.city-em{font-size:40px;margin-bottom:8px}
+.city-nm{font-size:15px;font-weight:700;margin-bottom:2px}
+.city-dc{font-size:11px;color:var(--t2)}
+.lang-list{display:flex;flex-direction:column;gap:10px;margin-bottom:20px}
+.lang-card{border:2px solid var(--border);border-radius:var(--r);padding:14px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;background:#fff;transition:all .2s;-webkit-tap-highlight-color:transparent}
+.lang-card:active{transform:scale(.98)}
+.lang-card.sel{border-color:var(--red);background:#FFF0F1}
 
-    /* LANG CARDS */
-    .lang-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
-    .lang-card { border: 2px solid var(--border); border-radius: var(--radius); padding: 14px 18px; display: flex; align-items: center; gap: 14px; cursor: pointer; background: white; transition: all .2s; -webkit-tap-highlight-color: transparent; }
-    .lang-card:active { transform: scale(.98); }
-    .lang-card.selected { border-color: var(--primary); background: #FFF0F1; }
-    .lang-flag { font-size: 28px; }
-    .lang-name { font-size: 16px; font-weight: 700; color: var(--text); }
-    .lang-native { font-size: 13px; color: var(--text-2); }
+/* CHIPS */
+.chips{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:20px}
+.chip{padding:9px 15px;border-radius:var(--rf);border:1.5px solid var(--border);font-size:13px;font-weight:500;cursor:pointer;background:#fff;color:var(--text);transition:all .15s;-webkit-tap-highlight-color:transparent;display:flex;align-items:center;gap:5px}
+.chip:active{transform:scale(.96)}
+.chip.sel{background:var(--red);color:#fff;border-color:var(--red)}
 
-    /* CHIPS */
-    .chips { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; }
-    .chip { padding: 9px 16px; border-radius: var(--radius-full); border: 1.5px solid var(--border); font-size: 13px; font-weight: 500; cursor: pointer; background: white; color: var(--text); transition: all .15s; -webkit-tap-highlight-color: transparent; display: flex; align-items: center; gap: 6px; }
-    .chip:active { transform: scale(.96); }
-    .chip.selected { background: var(--primary); color: white; border-color: var(--primary); }
+/* SEARCH */
+.srch-wrap{background:var(--red);padding:0 14px 14px}
+.srch-inner{background:#fff;border-radius:var(--rf);display:flex;align-items:center;padding:10px 14px;gap:8px}
+.srch-in{border:none;outline:none;flex:1;font-size:14px;color:var(--text);background:transparent;font-family:inherit}
+.srch-in::placeholder{color:var(--t3)}
 
-    /* SEARCH + FILTER */
-    .search-wrap { background: var(--primary); padding: 0 14px 14px; }
-    .search-inner { background: white; border-radius: var(--radius-full); display: flex; align-items: center; padding: 10px 14px; gap: 8px; }
-    .search-icon { font-size: 15px; color: var(--text-3); flex-shrink: 0; }
-    .search-input { border: none; outline: none; flex: 1; font-size: 14px; color: var(--text); background: transparent; }
-    .search-input::placeholder { color: var(--text-3); }
-    .filter-bar { display: flex; gap: 8px; padding: 12px 14px; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
-    .filter-bar::-webkit-scrollbar { display: none; }
-    .filter-chip { padding: 7px 14px; border-radius: var(--radius-full); border: 1.5px solid var(--border); font-size: 13px; font-weight: 500; white-space: nowrap; cursor: pointer; background: white; color: var(--text-2); transition: all .15s; -webkit-tap-highlight-color: transparent; flex-shrink: 0; }
-    .filter-chip.active { background: var(--primary); color: white; border-color: var(--primary); }
-    .date-filter { padding: 7px 14px; border-radius: var(--radius-full); border: 1.5px solid var(--border); font-size: 13px; background: white; color: var(--text-2); cursor: pointer; outline: none; font-family: inherit; white-space: nowrap; -webkit-tap-highlight-color: transparent; }
-    .date-filter:focus { border-color: var(--primary); }
+/* FILTER PILLS */
+.pills{display:flex;gap:8px;padding:10px 14px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;flex-shrink:0}
+.pills::-webkit-scrollbar{display:none}
+.pill{padding:7px 13px;border-radius:var(--rf);border:1.5px solid var(--border);font-size:12px;font-weight:500;white-space:nowrap;cursor:pointer;background:#fff;color:var(--t2);transition:all .15s;-webkit-tap-highlight-color:transparent;flex-shrink:0;font-family:inherit}
+.pill.on{background:var(--red);color:#fff;border-color:var(--red)}
+.sel-input{padding:7px 13px;border-radius:var(--rf);border:1.5px solid var(--border);font-size:12px;background:#fff;color:var(--t2);cursor:pointer;outline:none;font-family:inherit;white-space:nowrap;-webkit-tap-highlight-color:transparent}
+.sel-input:focus{border-color:var(--red)}
 
-    /* SECTION */
-    .section-hdr { padding: 14px 14px 6px; display: flex; align-items: center; justify-content: space-between; }
-    .section-title { font-size: 16px; font-weight: 700; }
-    .section-link { font-size: 13px; color: var(--primary); font-weight: 600; cursor: pointer; }
+/* SECTION */
+.sec-h{padding:12px 14px 6px;display:flex;align-items:center;justify-content:space-between}
+.sec-t{font-size:15px;font-weight:700}
+.sec-lk{font-size:13px;color:var(--red);font-weight:600;cursor:pointer;-webkit-tap-highlight-color:transparent}
 
-    /* EVENT CARDS */
-    .events-feed { padding: 0 14px; display: flex; flex-direction: column; gap: 12px; }
-    .event-card { background: white; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); cursor: pointer; transition: transform .15s; -webkit-tap-highlight-color: transparent; }
-    .event-card:active { transform: scale(.99); }
-    .event-hero { height: 150px; display: flex; align-items: center; justify-content: center; font-size: 60px; position: relative; }
-    .event-cat-badge { position: absolute; top: 10px; left: 10px; background: rgba(0,0,0,.55); color: white; padding: 3px 10px; border-radius: var(--radius-full); font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .5px; backdrop-filter: blur(4px); }
-    .event-price-badge { position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,.6); color: white; padding: 3px 10px; border-radius: var(--radius-full); font-size: 12px; font-weight: 700; backdrop-filter: blur(4px); }
-    .event-body { padding: 12px 14px; }
-    .event-title { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 6px; line-height: 1.3; }
-    .event-meta { display: flex; flex-direction: column; gap: 3px; margin-bottom: 10px; }
-    .event-meta-row { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--text-2); }
-    .event-footer { display: flex; gap: 8px; }
-    .event-book-btn { flex: 1; background: var(--primary); color: white; border: none; padding: 10px; border-radius: var(--radius-sm); font-size: 13px; font-weight: 600; cursor: pointer; -webkit-tap-highlight-color: transparent; transition: background .15s; }
-    .event-book-btn:active { background: var(--primary-dark); }
-    .event-icon-btn { background: var(--bg); border: none; width: 40px; border-radius: var(--radius-sm); cursor: pointer; font-size: 15px; display: flex; align-items: center; justify-content: center; -webkit-tap-highlight-color: transparent; }
+/* FEATURED BANNER */
+.feat{margin:0 14px 12px;border-radius:var(--r);overflow:hidden;position:relative;cursor:pointer;-webkit-tap-highlight-color:transparent;box-shadow:var(--shm)}
+.feat:active{transform:scale(.99)}
+.feat-img{height:175px;display:flex;align-items:center;justify-content:center;font-size:70px;position:relative}
+.feat-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.75) 0%,transparent 55%)}
+.feat-badge{position:absolute;top:12px;left:12px;background:var(--red);color:#fff;padding:4px 10px;border-radius:var(--rf);font-size:11px;font-weight:700;letter-spacing:.4px}
+.feat-body{position:absolute;bottom:0;left:0;right:0;padding:12px 14px;color:#fff}
+.feat-title{font-size:17px;font-weight:800;margin-bottom:3px;line-height:1.25}
+.feat-meta{font-size:12px;opacity:.85}
 
-    /* HORIZONTAL SCROLL */
-    .events-h-scroll { display: flex; gap: 12px; overflow-x: auto; padding: 4px 14px 12px; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
-    .events-h-scroll::-webkit-scrollbar { display: none; }
-    .event-card-sm { background: white; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); cursor: pointer; flex-shrink: 0; width: 170px; -webkit-tap-highlight-color: transparent; }
-    .event-card-sm:active { transform: scale(.97); }
-    .event-hero-sm { height: 90px; display: flex; align-items: center; justify-content: center; font-size: 38px; }
-    .event-body-sm { padding: 9px 10px; }
-    .event-title-sm { font-size: 12px; font-weight: 700; color: var(--text); margin-bottom: 3px; line-height: 1.3; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
-    .event-date-sm { font-size: 11px; color: var(--text-3); }
+/* EVENT CARDS (feed) */
+.feed{padding:0 14px;display:flex;flex-direction:column;gap:12px}
+.card{background:#fff;border-radius:var(--r);overflow:hidden;box-shadow:var(--sh);cursor:pointer;-webkit-tap-highlight-color:transparent;transition:transform .15s}
+.card:active{transform:scale(.99)}
+.card-hero{height:145px;display:flex;align-items:center;justify-content:center;font-size:56px;position:relative}
+.card-cat{position:absolute;top:10px;left:10px;background:rgba(0,0,0,.55);color:#fff;padding:3px 9px;border-radius:var(--rf);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;backdrop-filter:blur(4px)}
+.card-price{position:absolute;top:10px;right:10px;background:rgba(0,0,0,.6);color:#fff;padding:3px 9px;border-radius:var(--rf);font-size:11px;font-weight:700;backdrop-filter:blur(4px)}
+.card-save{position:absolute;bottom:10px;right:10px;width:32px;height:32px;border-radius:50%;background:rgba(0,0,0,.45);border:none;font-size:16px;display:flex;align-items:center;justify-content:center;cursor:pointer;backdrop-filter:blur(4px);-webkit-tap-highlight-color:transparent}
+.card-body{padding:11px 13px}
+.card-title{font-size:14px;font-weight:700;margin-bottom:5px;line-height:1.3;color:var(--text)}
+.card-meta{display:flex;flex-direction:column;gap:2px;margin-bottom:9px}
+.card-row{display:flex;align-items:center;gap:5px;font-size:12px;color:var(--t2)}
+.card-foot{display:flex;gap:8px}
+.card-book{flex:1;background:var(--red);color:#fff;border:none;padding:9px;border-radius:var(--rs);font-size:13px;font-weight:600;cursor:pointer;-webkit-tap-highlight-color:transparent;font-family:inherit}
+.card-book:active{background:var(--red-d)}
+.card-share{background:var(--bg);border:none;width:38px;border-radius:var(--rs);cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center}
 
-    /* EVENT DETAIL */
-    .event-detail { background: white; min-height: 100%; }
-    .event-detail-hero { min-height: 220px; display: flex; align-items: center; justify-content: center; font-size: 80px; position: relative; }
-    .back-btn { position: absolute; top: 14px; left: 14px; width: 38px; height: 38px; border-radius: 50%; background: rgba(0,0,0,.5); border: none; color: white; font-size: 18px; cursor: pointer; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(4px); -webkit-tap-highlight-color: transparent; }
-    .share-btn-hero { position: absolute; top: 14px; right: 14px; width: 38px; height: 38px; border-radius: 50%; background: rgba(0,0,0,.5); border: none; color: white; font-size: 16px; cursor: pointer; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(4px); -webkit-tap-highlight-color: transparent; }
-    .event-detail-body { padding: 20px 16px 120px; }
-    .detail-cat-chip { display: inline-flex; align-items: center; gap: 5px; padding: 4px 12px; border-radius: var(--radius-full); font-size: 12px; font-weight: 600; margin-bottom: 10px; background: #FFF0F1; color: var(--primary); }
-    .detail-title { font-size: 22px; font-weight: 800; margin-bottom: 6px; line-height: 1.25; }
-    .detail-org { font-size: 13px; color: var(--text-2); margin-bottom: 18px; }
-    .detail-info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 18px; }
-    .detail-info-card { background: var(--bg); border-radius: var(--radius-sm); padding: 12px; }
-    .detail-info-label { font-size: 10px; color: var(--text-3); text-transform: uppercase; letter-spacing: .6px; margin-bottom: 4px; }
-    .detail-info-val { font-size: 13px; font-weight: 600; color: var(--text); line-height: 1.3; }
-    .map-block { background: var(--bg); border-radius: var(--radius); height: 130px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; margin-bottom: 18px; border: 1.5px dashed var(--border); cursor: pointer; }
-    .map-block:active { background: #E2E8F0; }
-    .attending-row { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; padding: 12px; background: var(--bg); border-radius: var(--radius-sm); }
-    .avatars { display: flex; }
-    .av { width: 28px; height: 28px; border-radius: 50%; background: var(--primary); border: 2px solid white; margin-left: -8px; display: flex; align-items: center; justify-content: center; font-size: 11px; color: white; font-weight: 700; }
-    .av:first-child { margin-left: 0; }
-    .attending-text { font-size: 13px; color: var(--text-2); flex: 1; }
-    .tags-row { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 18px; }
-    .tag-chip { padding: 4px 10px; border-radius: var(--radius-full); font-size: 11px; font-weight: 500; background: var(--bg); color: var(--text-2); }
-    .detail-desc { font-size: 14px; line-height: 1.7; color: var(--text-2); margin-bottom: 20px; }
-    .detail-footer { position: fixed; bottom: 0; left: 50%; transform: translateX(-50%); width: 100%; max-width: 430px; padding: 12px 16px; background: white; border-top: 1px solid var(--border); display: flex; gap: 10px; box-shadow: 0 -4px 12px rgba(0,0,0,.08); z-index: 50; }
+/* HORIZONTAL SCROLL CARDS */
+.h-scroll{display:flex;gap:11px;overflow-x:auto;padding:2px 14px 12px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.h-scroll::-webkit-scrollbar{display:none}
+.card-sm{background:#fff;border-radius:var(--r);overflow:hidden;box-shadow:var(--sh);cursor:pointer;flex-shrink:0;width:165px;-webkit-tap-highlight-color:transparent}
+.card-sm:active{transform:scale(.97)}
+.card-sm-hero{height:90px;display:flex;align-items:center;justify-content:center;font-size:36px;position:relative}
+.card-sm-save{position:absolute;top:6px;right:6px;width:26px;height:26px;border-radius:50%;background:rgba(0,0,0,.4);border:none;font-size:13px;display:flex;align-items:center;justify-content:center;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.card-sm-body{padding:8px 10px}
+.card-sm-title{font-size:12px;font-weight:700;color:var(--text);margin-bottom:3px;line-height:1.3;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.card-sm-date{font-size:10px;color:var(--t3)}
 
-    /* GROUP BOOKING */
-    .group-page { padding: 16px; padding-bottom: 120px; }
-    .event-mini-card { background: white; border-radius: var(--radius); padding: 14px; display: flex; gap: 12px; align-items: center; margin-bottom: 20px; box-shadow: var(--shadow); }
-    .event-mini-emoji { font-size: 36px; width: 56px; height: 56px; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-    .event-mini-title { font-size: 14px; font-weight: 700; margin-bottom: 3px; }
-    .event-mini-date { font-size: 12px; color: var(--text-2); }
-    .form-section { background: white; border-radius: var(--radius); padding: 16px; margin-bottom: 16px; box-shadow: var(--shadow); }
-    .form-section-title { font-size: 14px; font-weight: 700; margin-bottom: 14px; color: var(--text); display: flex; align-items: center; gap: 6px; }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px; }
-    .form-group { display: flex; flex-direction: column; gap: 5px; margin-bottom: 10px; }
-    .form-label { font-size: 11px; font-weight: 600; color: var(--text-2); text-transform: uppercase; letter-spacing: .5px; }
-    .form-input { width: 100%; padding: 10px 12px; border: 1.5px solid var(--border); border-radius: var(--radius-sm); font-size: 14px; color: var(--text); background: white; outline: none; transition: border-color .15s; font-family: inherit; }
-    .form-input:focus { border-color: var(--primary); }
-    .member-list { display: flex; flex-direction: column; gap: 8px; margin-bottom: 14px; }
-    .member-item { display: flex; align-items: center; gap: 12px; padding: 12px; background: var(--bg); border-radius: var(--radius-sm); }
-    .member-av { width: 38px; height: 38px; border-radius: 50%; background: var(--primary); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 15px; flex-shrink: 0; }
-    .member-name { font-size: 14px; font-weight: 600; color: var(--text); }
-    .member-contact { font-size: 12px; color: var(--text-2); }
-    .member-remove { background: none; border: none; color: var(--text-3); cursor: pointer; font-size: 18px; padding: 4px; margin-left: auto; }
-    .share-row { display: flex; gap: 8px; margin-top: 8px; }
-    .group-footer { position: fixed; bottom: 0; left: 50%; transform: translateX(-50%); width: 100%; max-width: 430px; padding: 12px 16px; background: white; border-top: 1px solid var(--border); z-index: 50; box-shadow: 0 -4px 12px rgba(0,0,0,.08); }
+/* EXPLORE */
+.exp-page{padding:14px}
+.cat-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.cat-card{background:#fff;border-radius:var(--r);overflow:hidden;box-shadow:var(--sh);cursor:pointer;-webkit-tap-highlight-color:transparent;border:2px solid transparent;transition:all .15s}
+.cat-card:active{transform:scale(.97)}
+.cat-card.on{border-color:var(--red)}
+.cat-hero{height:76px;display:flex;align-items:center;justify-content:center;font-size:34px}
+.cat-nm{padding:6px 12px 4px;font-size:13px;font-weight:700}
+.cat-ct{padding:0 12px 10px;font-size:11px;color:var(--t2)}
+.exp-back{display:flex;align-items:center;gap:8px;padding:0 0 12px;cursor:pointer;font-size:14px;font-weight:600;color:var(--red);-webkit-tap-highlight-color:transparent;background:none;border:none;font-family:inherit}
+.exp-events{display:flex;flex-direction:column;gap:10px}
 
-    /* NOTIFICATIONS */
-    .notif-header-bar { padding: 14px 16px 0; display: flex; align-items: center; justify-content: space-between; }
-    .notif-list { padding: 12px 14px; display: flex; flex-direction: column; gap: 10px; }
-    .notif-item { background: white; border-radius: var(--radius); padding: 14px; display: flex; gap: 12px; box-shadow: var(--shadow); border-left: 3px solid transparent; }
-    .notif-item.unread { border-left-color: var(--primary); }
-    .notif-icon-box { width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
-    .notif-content { flex: 1; }
-    .notif-title { font-size: 13px; font-weight: 700; margin-bottom: 3px; color: var(--text); }
-    .notif-body { font-size: 12px; color: var(--text-2); margin-bottom: 4px; line-height: 1.5; }
-    .notif-time { font-size: 11px; color: var(--text-3); }
+/* EVENT DETAIL */
+.det{background:#fff;min-height:100%}
+.det-hero{min-height:210px;display:flex;align-items:center;justify-content:center;font-size:76px;position:relative}
+.det-back{position:absolute;top:14px;left:14px;width:38px;height:38px;border-radius:50%;background:rgba(0,0,0,.5);border:none;color:#fff;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(4px);-webkit-tap-highlight-color:transparent}
+.det-acts{position:absolute;top:14px;right:14px;display:flex;gap:8px}
+.det-act{width:38px;height:38px;border-radius:50%;background:rgba(0,0,0,.5);border:none;color:#fff;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(4px);-webkit-tap-highlight-color:transparent}
+.det-body{padding:18px 16px 130px}
+.det-cat{display:inline-flex;align-items:center;gap:4px;padding:4px 11px;border-radius:var(--rf);font-size:11px;font-weight:700;background:#FFF0F1;color:var(--red);margin-bottom:10px}
+.det-title{font-size:21px;font-weight:800;margin-bottom:5px;line-height:1.25}
+.det-org{font-size:13px;color:var(--t2);margin-bottom:16px}
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:16px}
+.info-c{background:var(--bg);border-radius:var(--rs);padding:11px}
+.info-c.wide{grid-column:span 2}
+.info-lbl{font-size:10px;color:var(--t3);text-transform:uppercase;letter-spacing:.6px;margin-bottom:3px}
+.info-val{font-size:13px;font-weight:600;color:var(--text);line-height:1.3}
+.map-btn{background:var(--bg);border:1.5px dashed var(--border);border-radius:var(--r);height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;margin-bottom:16px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.map-btn:active{background:#E2E8F0}
+.att-row{display:flex;align-items:center;gap:10px;background:var(--bg);border-radius:var(--rs);padding:11px;margin-bottom:16px}
+.avs{display:flex}.av{width:27px;height:27px;border-radius:50%;background:var(--red);border:2px solid #fff;margin-left:-7px;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;font-weight:700}.av:first-child{margin-left:0}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+.tg{padding:4px 10px;border-radius:var(--rf);font-size:11px;background:var(--bg);color:var(--t2)}
+.det-desc{font-size:14px;line-height:1.7;color:var(--t2);margin-bottom:20px}
+.det-foot{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;padding:12px 16px;background:#fff;border-top:1px solid var(--border);display:flex;gap:10px;box-shadow:0 -4px 12px rgba(0,0,0,.08);z-index:50}
 
-    /* PROFILE */
-    .profile-page { background: var(--bg); min-height: 100%; }
-    .profile-hero { background: var(--primary); padding: 28px 16px 52px; text-align: center; color: white; }
-    .profile-av { width: 72px; height: 72px; border-radius: 50%; background: rgba(255,255,255,.25); display: flex; align-items: center; justify-content: center; font-size: 30px; margin: 0 auto 12px; border: 3px solid rgba(255,255,255,.4); }
-    .profile-name { font-size: 20px; font-weight: 800; margin-bottom: 3px; }
-    .profile-city { font-size: 13px; opacity: .85; }
-    .profile-stats-card { background: white; border-radius: var(--radius); margin: -28px 14px 14px; padding: 16px; box-shadow: var(--shadow-md); }
-    .stats-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 8px; border-bottom: 1px solid var(--border); padding-bottom: 14px; margin-bottom: 14px; }
-    .stat-box { text-align: center; }
-    .stat-num { font-size: 22px; font-weight: 800; color: var(--primary); }
-    .stat-lbl { font-size: 10px; color: var(--text-2); margin-top: 2px; }
-    .interests-preview { display: flex; flex-wrap: wrap; gap: 6px; }
-    .menu-card { background: white; border-radius: var(--radius); margin: 0 14px 14px; box-shadow: var(--shadow); overflow: hidden; }
-    .menu-item { display: flex; align-items: center; gap: 14px; padding: 14px 16px; cursor: pointer; border-bottom: 1px solid var(--border); transition: background .15s; -webkit-tap-highlight-color: transparent; }
-    .menu-item:last-child { border-bottom: none; }
-    .menu-item:active { background: var(--bg); }
-    .menu-icon { font-size: 20px; width: 32px; text-align: center; flex-shrink: 0; }
-    .menu-label { flex: 1; font-size: 14px; font-weight: 500; }
-    .menu-arrow { color: var(--text-3); font-size: 14px; }
-    .lang-toggle-row { display: flex; gap: 6px; margin: 0 14px 14px; }
-    .lang-btn { flex: 1; padding: 10px 8px; border-radius: var(--radius-sm); border: 1.5px solid var(--border); font-size: 13px; font-weight: 600; cursor: pointer; background: white; color: var(--text-2); transition: all .15s; text-align: center; -webkit-tap-highlight-color: transparent; }
-    .lang-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
+/* GROUP BOOKING */
+.grp-page{padding:16px;padding-bottom:120px}
+.evt-mini{background:#fff;border-radius:var(--r);padding:13px;display:flex;gap:12px;align-items:center;margin-bottom:18px;box-shadow:var(--sh)}
+.evt-mini-em{font-size:32px;width:54px;height:54px;border-radius:var(--rs);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.form-sec{background:#fff;border-radius:var(--r);padding:16px;margin-bottom:14px;box-shadow:var(--sh)}
+.form-sec-t{font-size:14px;font-weight:700;margin-bottom:14px;display:flex;align-items:center;gap:6px}
+.form-g{display:flex;flex-direction:column;gap:5px;margin-bottom:11px}
+.form-lbl{font-size:11px;font-weight:600;color:var(--t2);text-transform:uppercase;letter-spacing:.5px}
+.form-in{width:100%;padding:10px 12px;border:1.5px solid var(--border);border-radius:var(--rs);font-size:14px;color:var(--text);background:#fff;outline:none;transition:border-color .15s;font-family:inherit}
+.form-in:focus{border-color:var(--red)}
+.m-list{display:flex;flex-direction:column;gap:8px;margin-bottom:14px}
+.m-item{display:flex;align-items:center;gap:11px;padding:11px;background:var(--bg);border-radius:var(--rs)}
+.m-av{width:37px;height:37px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:15px;flex-shrink:0}
+.m-rm{background:none;border:none;color:var(--t3);cursor:pointer;font-size:17px;padding:4px;margin-left:auto}
+.grp-foot{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;padding:12px 16px;background:#fff;border-top:1px solid var(--border);z-index:50;box-shadow:0 -4px 12px rgba(0,0,0,.08)}
 
-    /* MARKETER */
-    .marketer-page { padding: 14px; padding-bottom: 80px; }
-    .marketer-hero { background: linear-gradient(135deg, #1a1a2e, #16213e); border-radius: var(--radius); padding: 20px; margin-bottom: 14px; color: white; }
-    .marketer-hero-title { font-size: 18px; font-weight: 800; margin-bottom: 4px; }
-    .marketer-hero-sub { font-size: 12px; opacity: .75; }
-    .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; }
-    .stat-card { background: white; border-radius: var(--radius); padding: 16px; box-shadow: var(--shadow); }
-    .stat-card-icon { font-size: 22px; margin-bottom: 8px; }
-    .stat-card-val { font-size: 24px; font-weight: 800; color: var(--primary); margin-bottom: 2px; }
-    .stat-card-lbl { font-size: 11px; color: var(--text-2); }
-    .chart-card { background: white; border-radius: var(--radius); padding: 16px; margin-bottom: 12px; box-shadow: var(--shadow); }
-    .chart-title { font-size: 14px; font-weight: 700; margin-bottom: 14px; }
-    .bar-chart { display: flex; align-items: flex-end; gap: 8px; height: 90px; margin-bottom: 4px; }
-    .bar-grp { display: flex; flex-direction: column; align-items: center; flex: 1; gap: 4px; height: 100%; }
-    .bar-fill { width: 100%; border-radius: 4px 4px 0 0; flex-shrink: 0; transition: height .5s; }
-    .bar-lbl { font-size: 10px; color: var(--text-2); text-align: center; white-space: nowrap; }
-    .bar-val { font-size: 10px; color: var(--text-3); font-weight: 600; }
-    .donut-wrap { display: flex; align-items: center; gap: 16px; }
-    .legend { display: flex; flex-direction: column; gap: 7px; flex: 1; }
-    .legend-row { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--text-2); }
-    .legend-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
-    .legend-pct { margin-left: auto; font-weight: 600; color: var(--text); }
-    .campaign-list { display: flex; flex-direction: column; gap: 8px; }
-    .campaign-item { background: var(--bg); border-radius: var(--radius-sm); padding: 12px 14px; display: flex; align-items: center; gap: 10px; }
-    .campaign-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
-    .campaign-name { font-size: 13px; font-weight: 600; flex: 1; }
-    .campaign-reach { font-size: 12px; color: var(--text-2); }
+/* NOTIFICATIONS */
+.notif-list{padding:12px 14px;display:flex;flex-direction:column;gap:10px}
+.notif-item{background:#fff;border-radius:var(--r);padding:13px;display:flex;gap:11px;box-shadow:var(--sh);border-left:3px solid transparent;cursor:pointer}
+.notif-item.unread{border-left-color:var(--red)}
+.n-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:19px;flex-shrink:0}
+.n-title{font-size:13px;font-weight:700;margin-bottom:3px;color:var(--text)}
+.n-body{font-size:12px;color:var(--t2);margin-bottom:3px;line-height:1.5}
+.n-time{font-size:11px;color:var(--t3)}
+.n-badge{width:8px;height:8px;border-radius:50%;background:var(--red);flex-shrink:0;margin-top:4px}
 
-    /* BOOKING CONFIRM SHEET */
-    .sheet-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.5); z-index: 200; display: flex; align-items: flex-end; justify-content: center; animation: fadeIn .2s; }
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    .sheet { background: white; border-radius: 20px 20px 0 0; padding: 24px; width: 100%; max-width: 430px; animation: slideUp .3s ease; }
-    @keyframes slideUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
-    .sheet-handle { width: 36px; height: 4px; background: var(--border); border-radius: 2px; margin: 0 auto 20px; }
-    .sheet-emoji { font-size: 56px; text-align: center; margin-bottom: 12px; }
-    .sheet-title { font-size: 20px; font-weight: 800; text-align: center; margin-bottom: 8px; }
-    .sheet-sub { font-size: 14px; color: var(--text-2); text-align: center; margin-bottom: 24px; line-height: 1.5; }
-    .sheet-btns { display: flex; gap: 10px; }
+/* SAVED */
+.saved-page{padding:14px}
+.saved-empty{padding:48px 24px;text-align:center}
+.saved-grid{display:flex;flex-direction:column;gap:10px}
 
-    /* EMPTY STATE */
-    .empty-state { padding: 48px 24px; text-align: center; }
-    .empty-emoji { font-size: 56px; margin-bottom: 12px; }
-    .empty-title { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
-    .empty-sub { font-size: 14px; color: var(--text-2); line-height: 1.6; }
+/* PROFILE */
+.prof-page{background:var(--bg);min-height:100%}
+.prof-hero{background:var(--red);padding:26px 16px 48px;text-align:center;color:#fff}
+.prof-av{width:68px;height:68px;border-radius:50%;background:rgba(255,255,255,.22);display:flex;align-items:center;justify-content:center;font-size:28px;margin:0 auto 10px;border:3px solid rgba(255,255,255,.38)}
+.prof-name{font-size:19px;font-weight:800;margin-bottom:3px}
+.prof-sub{font-size:12px;opacity:.82}
+.prof-card{background:#fff;border-radius:var(--r);margin:-26px 14px 14px;padding:16px;box-shadow:var(--shm)}
+.stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;border-bottom:1px solid var(--border);padding-bottom:14px;margin-bottom:14px}
+.stat{text-align:center}
+.stat-n{font-size:21px;font-weight:800;color:var(--red)}
+.stat-l{font-size:10px;color:var(--t2);margin-top:2px}
+.lang-row{display:flex;gap:6px;margin:0 14px 14px}
+.lang-btn{flex:1;padding:9px 6px;border-radius:var(--rs);border:1.5px solid var(--border);font-size:13px;font-weight:600;cursor:pointer;background:#fff;color:var(--t2);text-align:center;-webkit-tap-highlight-color:transparent;font-family:inherit;transition:all .15s}
+.lang-btn.on{background:var(--red);color:#fff;border-color:var(--red)}
+.menu-card{background:#fff;border-radius:var(--r);margin:0 14px 14px;box-shadow:var(--sh);overflow:hidden}
+.menu-item{display:flex;align-items:center;gap:13px;padding:14px 15px;cursor:pointer;border-bottom:1px solid var(--border);transition:background .15s;-webkit-tap-highlight-color:transparent}
+.menu-item:last-child{border-bottom:none}
+.menu-item:active{background:var(--bg)}
+.menu-ic{font-size:19px;width:30px;text-align:center;flex-shrink:0}
+.menu-lbl{flex:1;font-size:14px;font-weight:500}
+.menu-arr{color:var(--t3);font-size:14px}
 
-    /* TOAST */
-    .toast { position: fixed; top: 20px; left: 50%; transform: translateX(-50%); background: #1E293B; color: white; padding: 10px 20px; border-radius: var(--radius-full); font-size: 13px; z-index: 300; white-space: nowrap; box-shadow: var(--shadow-lg); animation: toastAnim 2.8s ease forwards; max-width: 360px; text-align: center; }
-    @keyframes toastAnim { 0%{opacity:0;transform:translateX(-50%) translateY(-8px)} 12%{opacity:1;transform:translateX(-50%) translateY(0)} 80%{opacity:1} 100%{opacity:0} }
+/* MARKETER */
+.mkt-page{padding:14px;padding-bottom:80px}
+.mkt-hero{background:linear-gradient(135deg,#1a1a2e,#16213e);border-radius:var(--r);padding:20px;margin-bottom:14px;color:#fff}
+.mkt-t{font-size:17px;font-weight:800;margin-bottom:3px}
+.mkt-s{font-size:12px;opacity:.72}
+.stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:12px}
+.s-card{background:#fff;border-radius:var(--r);padding:14px;box-shadow:var(--sh)}
+.s-ic{font-size:21px;margin-bottom:7px}
+.s-val{font-size:23px;font-weight:800;color:var(--red);margin-bottom:2px}
+.s-lbl{font-size:11px;color:var(--t2)}
+.ch-card{background:#fff;border-radius:var(--r);padding:15px;margin-bottom:11px;box-shadow:var(--sh)}
+.ch-t{font-size:14px;font-weight:700;margin-bottom:13px}
+.bar-ch{display:flex;align-items:flex-end;gap:8px;height:88px;margin-bottom:4px}
+.bg{display:flex;flex-direction:column;align-items:center;flex:1;gap:4px;height:100%}
+.bf{width:100%;border-radius:4px 4px 0 0;background:var(--red);flex-shrink:0;transition:height .5s}
+.bl{font-size:10px;color:var(--t2);text-align:center;white-space:nowrap}
+.bv{font-size:10px;color:var(--t3);font-weight:600}
+.donut-w{display:flex;align-items:center;gap:14px}
+.legend{display:flex;flex-direction:column;gap:6px;flex:1}
+.leg-r{display:flex;align-items:center;gap:7px;font-size:12px;color:var(--t2)}
+.leg-d{width:9px;height:9px;border-radius:50%;flex-shrink:0}
+.leg-p{margin-left:auto;font-weight:700;color:var(--text)}
+.zone-row{margin-bottom:9px}
+.zone-hd{display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px}
+.zone-bar{height:6px;background:var(--border);border-radius:3px;overflow:hidden}
+.zone-fill{height:100%;background:var(--red);border-radius:3px;transition:width .5s}
+.cmp-item{background:var(--bg);border-radius:var(--rs);padding:11px 13px;display:flex;align-items:center;gap:9px;margin-bottom:7px}
+.cmp-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
 
-    /* UTILS */
-    .divider { height: 1px; background: var(--border); margin: 8px 0; }
-    .text-center { text-align: center; }
-    .mt-8 { margin-top: 8px; }
-    .mt-16 { margin-top: 16px; }
-    .section-card { background: white; border-radius: var(--radius); margin: 0 14px 14px; padding: 14px; box-shadow: var(--shadow); }
+/* PREFERENCES */
+.pref-page{background:#fff;min-height:100%}
 
-    /* EXPLORE */
-    .explore-page { padding: 14px; }
-    .explore-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-    .explore-cat-card { background: white; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); cursor: pointer; -webkit-tap-highlight-color: transparent; }
-    .explore-cat-card:active { transform: scale(.97); }
-    .explore-cat-hero { height: 80px; display: flex; align-items: center; justify-content: center; font-size: 36px; }
-    .explore-cat-name { padding: 8px 12px; font-size: 13px; font-weight: 700; }
-    .explore-cat-count { padding: 0 12px 10px; font-size: 11px; color: var(--text-2); }
-  </style>
+/* SHEET / MODAL */
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;display:flex;align-items:flex-end;justify-content:center;animation:fi .2s}
+@keyframes fi{from{opacity:0}to{opacity:1}}
+.sheet{background:#fff;border-radius:20px 20px 0 0;padding:22px;width:100%;max-width:430px;animation:su .28s ease}
+@keyframes su{from{transform:translateY(100%)}to{transform:translateY(0)}}
+.sheet-handle{width:36px;height:4px;background:var(--border);border-radius:2px;margin:0 auto 18px}
+.sheet-em{font-size:52px;text-align:center;margin-bottom:10px}
+.sheet-t{font-size:19px;font-weight:800;text-align:center;margin-bottom:7px}
+.sheet-s{font-size:14px;color:var(--t2);text-align:center;margin-bottom:22px;line-height:1.5}
+.sheet-btns{display:flex;gap:9px}
+
+/* EMPTY STATE */
+.empty{padding:44px 22px;text-align:center}
+.empty em{font-size:52px;display:block;margin-bottom:10px;font-style:normal}
+.empty h3{font-size:17px;font-weight:700;margin-bottom:7px}
+.empty p{font-size:13px;color:var(--t2);line-height:1.6}
+
+/* TOAST */
+.toast{position:fixed;top:18px;left:50%;transform:translateX(-50%);background:#0F172A;color:#fff;padding:10px 18px;border-radius:var(--rf);font-size:13px;z-index:300;white-space:nowrap;box-shadow:0 8px 24px rgba(0,0,0,.25);animation:ta 2.8s ease forwards;max-width:360px;text-align:center}
+@keyframes ta{0%{opacity:0;transform:translateX(-50%) translateY(-8px)}12%{opacity:1;transform:translateX(-50%) translateY(0)}80%{opacity:1}100%{opacity:0}}
+</style>
 </head>
 <body>
 <div id="root"></div>
 <script type="text/babel">
-const { useState, useEffect, useContext, createContext, useCallback, useMemo, useRef } = React;
+const {useState,useEffect,useContext,createContext,useMemo,useRef,useCallback}=React;
 
-// ───────────── DATA ─────────────
+// ── DATA ──────────────────────────────────────────────────────────
 
-const CATEGORIES = [
-  { id: 'all',           en: 'All',           ta: 'அனைத்தும்',      hi: 'सभी',          emoji: '🎪' },
-  { id: 'music',         en: 'Music',         ta: 'இசை',           hi: 'संगीत',        emoji: '🎵' },
-  { id: 'food',          en: 'Food',          ta: 'உணவு',          hi: 'खाना',         emoji: '🍽️' },
-  { id: 'entertainment', en: 'Entertainment', ta: 'பொழுதுபோக்கு',  hi: 'मनोरंजन',      emoji: '🎭' },
-  { id: 'comedy',        en: 'Comedy',        ta: 'நகைச்சுவை',     hi: 'कॉमेडी',       emoji: '😂' },
-  { id: 'art',           en: 'Art',           ta: 'கலை',           hi: 'कला',          emoji: '🎨' },
-  { id: 'sports',        en: 'Sports',        ta: 'விளையாட்டு',    hi: 'खेल',          emoji: '🏃' },
-  { id: 'cultural',      en: 'Cultural',      ta: 'கலாச்சாரம்',    hi: 'सांस्कृतिक',   emoji: '🕌' },
+const CATS=[
+  {id:'all',en:'All',ta:'அனைத்தும்',hi:'सभी',em:'🎪'},
+  {id:'music',en:'Music',ta:'இசை',hi:'संगीत',em:'🎵'},
+  {id:'food',en:'Food',ta:'உணவு',hi:'खाना',em:'🍽️'},
+  {id:'entertainment',en:'Entertainment',ta:'பொழுதுபோக்கு',hi:'मनोरंजन',em:'🎭'},
+  {id:'comedy',en:'Comedy',ta:'நகைச்சுவை',hi:'कॉमेडी',em:'😂'},
+  {id:'art',en:'Art',ta:'கலை',hi:'कला',em:'🎨'},
+  {id:'sports',en:'Sports',ta:'விளையாட்டு',hi:'खेल',em:'🏃'},
+  {id:'cultural',en:'Cultural',ta:'கலாச்சாரம்',hi:'सांस्कृतिक',em:'🕌'},
 ];
 
-const ZONES = {
-  chennai:   ['Anna Nagar','T. Nagar','Adyar','Nungambakkam','Velachery','ECR','Mylapore','Porur'],
-  bangalore: ['Indiranagar','Koramangala','Whitefield','MG Road','Jayanagar','HSR Layout','Malleshwaram','Cubbon Park'],
+const ZONES={
+  chennai:['Anna Nagar','T. Nagar','Adyar','Nungambakkam','Velachery','ECR','Mylapore','Porur'],
+  bangalore:['Indiranagar','Koramangala','Whitefield','MG Road','Jayanagar','HSR Layout','Malleshwaram','Cubbon Park'],
 };
 
-const INTERESTS = [
-  { id: 'music', en: 'Music', ta: 'இசை', hi: 'संगीत', emoji: '🎵' },
-  { id: 'food', en: 'Food', ta: 'உணவு', hi: 'खाना', emoji: '🍜' },
-  { id: 'comedy', en: 'Comedy', ta: 'நகைச்சுவை', hi: 'कॉमेडी', emoji: '😂' },
-  { id: 'art', en: 'Art', ta: 'கலை', hi: 'कला', emoji: '🎨' },
-  { id: 'sports', en: 'Sports', ta: 'விளையாட்டு', hi: 'खेल', emoji: '🏃' },
-  { id: 'cultural', en: 'Cultural', ta: 'கலாச்சாரம்', hi: 'संस्कृति', emoji: '🕌' },
-  { id: 'entertainment', en: 'Entertainment', ta: 'பொழுதுபோக்கு', hi: 'मनोरंजन', emoji: '🎬' },
-  { id: 'wellness', en: 'Wellness', ta: 'ஆரோக்கியம்', hi: 'स्वास्थ्य', emoji: '🧘' },
+const INTERESTS=[
+  {id:'music',en:'Music',ta:'இசை',hi:'संगीत',em:'🎵'},
+  {id:'food',en:'Food',ta:'உணவு',hi:'खाना',em:'🍜'},
+  {id:'comedy',en:'Comedy',ta:'நகைச்சுவை',hi:'कॉमेडी',em:'😂'},
+  {id:'art',en:'Art',ta:'கலை',hi:'कला',em:'🎨'},
+  {id:'sports',en:'Sports',ta:'விளையாட்டு',hi:'खेल',em:'🏃'},
+  {id:'cultural',en:'Cultural',ta:'கலாச்சாரம்',hi:'संस्कृति',em:'🕌'},
+  {id:'entertainment',en:'Entertainment',ta:'பொழுதுபோக்கு',hi:'मनोरंजन',em:'🎬'},
+  {id:'wellness',en:'Wellness',ta:'ஆரோக்கியம்',hi:'स्वास्थ्य',em:'🧘'},
 ];
 
-const EVENTS = [
-  { id:1, title:'Chennai Music Fest 2026', category:'music', city:'chennai', zone:'Anna Nagar', date:'2026-04-20', time:'6:00 PM', venue:'MAA TV Arena, Anna Nagar', price:'₹500 – ₹2,000', emoji:'🎵', gradient:'linear-gradient(135deg,#667eea,#764ba2)', description:'Experience an electrifying night of music featuring top artists from across South India. This annual festival brings together classical Carnatic musicians, contemporary indie artists, and international performers for an unforgettable evening under the stars.', bookingUrl:'https://bookmyshow.com', organizer:'Chennai Events Co.', attending:1240, tags:['live music','outdoor','family-friendly'] },
-  { id:2, title:'Madras Food Festival', category:'food', city:'chennai', zone:'T. Nagar', date:'2026-04-22', time:'11:00 AM', venue:'Nalli Silks Grounds, T. Nagar', price:'Free Entry', emoji:'🍜', gradient:'linear-gradient(135deg,#f093fb,#f5576c)', description:'Celebrate the rich culinary heritage of Madras with 50+ food stalls, cooking demonstrations by celebrity chefs, and a special street food trail through the flavors of old Chennai.', bookingUrl:'https://insider.in', organizer:'Tamil Nadu Tourism', attending:3800, tags:['food','family','free entry'] },
-  { id:3, title:'Stand-Up Comedy Night', category:'comedy', city:'chennai', zone:'Nungambakkam', date:'2026-04-25', time:'8:00 PM', venue:'The Comedy Store, Nungambakkam', price:'₹400 – ₹800', emoji:'😂', gradient:'linear-gradient(135deg,#4facfe,#00f2fe)', description:'A night of non-stop laughter featuring Chennai\'s finest stand-up comedians performing sets in Tamil and English. Special headliner to be announced!', bookingUrl:'https://bookmyshow.com', organizer:'LOL Events Chennai', attending:280, tags:['comedy','18+','indoor'] },
-  { id:4, title:'Carnatic Classical Evening', category:'cultural', city:'chennai', zone:'Mylapore', date:'2026-04-27', time:'5:30 PM', venue:'Mylapore Fine Arts Club', price:'₹100 – ₹500', emoji:'🎶', gradient:'linear-gradient(135deg,#fa709a,#fee140)', description:'An intimate evening of Carnatic classical music by the legendary Smt. Sudha Raghunathan and her disciple ensemble. A rare opportunity to experience divine melodies.', bookingUrl:'https://insider.in', organizer:'Mylapore Fine Arts', attending:450, tags:['classical','cultural','indoor'] },
-  { id:5, title:'ECR Beach Marathon', category:'sports', city:'chennai', zone:'ECR', date:'2026-05-01', time:'6:00 AM', venue:'Neelankarai Beach, ECR', price:'₹300 – ₹1,000', emoji:'🏃', gradient:'linear-gradient(135deg,#43e97b,#38f9d7)', description:'Run along Chennai\'s beautiful East Coast Road with categories for 5K, 10K, and 21K. The scenic beach route makes this one of India\'s most loved marathon experiences.', bookingUrl:'https://procam.in', organizer:'Pro Marathon Events', attending:5200, tags:['sports','outdoor','fitness'] },
-  { id:6, title:'Tamil Short Film Awards', category:'entertainment', city:'chennai', zone:'Adyar', date:'2026-05-03', time:'7:00 PM', venue:'Sathyam Cinemas, Adyar', price:'₹200 – ₹600', emoji:'🎬', gradient:'linear-gradient(135deg,#a18cd1,#fbc2eb)', description:'An evening celebrating the best in Tamil independent cinema. 20+ short films across genres, red carpet arrivals, and a special Q&A with renowned directors.', bookingUrl:'https://bookmyshow.com', organizer:'Tamil Film Federation', attending:620, tags:['cinema','awards','arts'] },
-  { id:7, title:'Art Walk – Fort St. George', category:'art', city:'chennai', zone:'Mylapore', date:'2026-05-05', time:'10:00 AM', venue:'Fort Museum, Fort St. George', price:'₹50', emoji:'🎨', gradient:'linear-gradient(135deg,#fccb90,#d57eeb)', description:'A guided art walk through Chennai\'s historic Fort St. George, featuring contemporary installations by local artists alongside colonial-era artifacts.', bookingUrl:'https://insider.in', organizer:'Chennai Heritage Society', attending:180, tags:['art','heritage','guided'] },
-  { id:8, title:'Fusion Food Truck Fest', category:'food', city:'chennai', zone:'Velachery', date:'2026-05-08', time:'5:00 PM', venue:'Phoenix Market City Grounds', price:'Free Entry', emoji:'🚚', gradient:'linear-gradient(135deg,#f77062,#fe5196)', description:'Over 30 food trucks offering fusion cuisines from around the world — from Korean BBQ tacos to butter chicken pizza!', bookingUrl:'https://insider.in', organizer:'Street Eats Chennai', attending:2100, tags:['food','family','outdoor','free entry'] },
-  { id:9, title:'Bangalore Rock Fest', category:'music', city:'bangalore', zone:'Indiranagar', date:'2026-04-21', time:'5:00 PM', venue:'Palace Grounds, Bengaluru', price:'₹800 – ₹3,500', emoji:'🎸', gradient:'linear-gradient(135deg,#232526,#414345)', description:'The biggest rock music festival in South India with 15 bands across 3 stages. From metal to indie rock, this is the ultimate weekend for music lovers.', bookingUrl:'https://bookmyshow.com', organizer:'Bangalore Music Events', attending:8500, tags:['rock','music','outdoor','18+'] },
-  { id:10, title:'Namma Food Festival', category:'food', city:'bangalore', zone:'Koramangala', date:'2026-04-23', time:'12:00 PM', venue:'Koramangala Indoor Stadium', price:'Free Entry', emoji:'🥘', gradient:'linear-gradient(135deg,#f6d365,#fda085)', description:'Celebrating the diverse food culture of Bengaluru with 80+ stalls of Karnataka cuisine, North Indian street food, and trendy new restaurants.', bookingUrl:'https://insider.in', organizer:'BBMP Tourism', attending:6200, tags:['food','family','free entry'] },
-  { id:11, title:'Comedy Open Mic Night', category:'comedy', city:'bangalore', zone:'MG Road', date:'2026-04-26', time:'7:30 PM', venue:'Canvas Laugh Club, MG Road', price:'₹350 – ₹700', emoji:'🎤', gradient:'linear-gradient(135deg,#0fd850,#f9f047)', description:'12 comedians take the stage for 90 minutes of comedy in Hindi, English, and Kannada. Bangalore\'s best stand-up showcase.', bookingUrl:'https://bookmyshow.com', organizer:'Canvas Events', attending:210, tags:['comedy','18+','indoor'] },
-  { id:12, title:'Bharatanatyam Recital', category:'cultural', city:'bangalore', zone:'Jayanagar', date:'2026-04-28', time:'6:00 PM', venue:'Ravindra Kalakshetra, Jayanagar', price:'₹150 – ₹400', emoji:'💃', gradient:'linear-gradient(135deg,#ee9ca7,#ffdde1)', description:'A breathtaking Bharatanatyam performance by acclaimed dancer Rukmini Vijayakumar — an evening of grace, expression, and classical Indian dance at its finest.', bookingUrl:'https://insider.in', organizer:'Kalakshetra Foundation', attending:350, tags:['dance','classical','indoor'] },
-  { id:13, title:'Bengaluru Heritage Run', category:'sports', city:'bangalore', zone:'Cubbon Park', date:'2026-05-02', time:'6:30 AM', venue:'Cubbon Park, Central Bangalore', price:'₹200 – ₹800', emoji:'🏅', gradient:'linear-gradient(135deg,#89f7fe,#66a6ff)', description:'Run through Bengaluru\'s iconic heritage sites and lush green streets in this scenic 5K/10K. A celebration of the Garden City\'s history and urban beauty.', bookingUrl:'https://procam.in', organizer:'Bengaluru Runners Club', attending:3400, tags:['sports','outdoor','fitness'] },
-  { id:14, title:'Indie Film Screening', category:'entertainment', city:'bangalore', zone:'Whitefield', date:'2026-05-04', time:'7:00 PM', venue:'Cinepolis INOX, Whitefield', price:'₹250 – ₹500', emoji:'🎞️', gradient:'linear-gradient(135deg,#2c3e50,#fd746c)', description:'A curated evening of indie films from emerging Indian filmmakers — 4 shorts and 2 features, with director Q&A sessions after each screening.', bookingUrl:'https://bookmyshow.com', organizer:'Bangalore Film Society', attending:420, tags:['cinema','indie','indoor'] },
-  { id:15, title:'Contemporary Art Show', category:'art', city:'bangalore', zone:'HSR Layout', date:'2026-05-06', time:'11:00 AM', venue:'Gallery Sumukha, HSR Layout', price:'Free Entry', emoji:'🖼️', gradient:'linear-gradient(135deg,#667eea,#764ba2)', description:'An exclusive 5-day showcase of contemporary Indian art featuring 25 emerging and established artists — installations, paintings, sculptures, and digital art.', bookingUrl:'https://insider.in', organizer:'Gallery Sumukha', attending:890, tags:['art','exhibition','free entry'] },
-  { id:16, title:'Karnataka Cuisine Fest', category:'food', city:'bangalore', zone:'Malleshwaram', date:'2026-05-09', time:'10:00 AM', venue:'Seshadri Park, Malleshwaram', price:'Free Entry', emoji:'🍚', gradient:'linear-gradient(135deg,#f093fb,#f5576c)', description:'Celebrate authentic Karnataka cuisine from Coorg, Udupi, Mangalore, and the Konkan coast — all in one delicious festival.', bookingUrl:'https://insider.in', organizer:'Karnataka Govt. Tourism', attending:4800, tags:['food','cultural','outdoor','free entry'] },
+const EVENTS=[
+  {id:1,title:'Chennai Music Fest 2026',cat:'music',city:'chennai',zone:'Anna Nagar',date:'2026-04-20',time:'6:00 PM',venue:'MAA TV Arena, Anna Nagar',price:'₹500–₹2,000',em:'🎵',grad:'linear-gradient(135deg,#667eea,#764ba2)',desc:'Experience an electrifying night of music featuring top artists from across South India. Classical Carnatic musicians, contemporary indie artists, and international performers come together for an unforgettable evening under the stars.',burl:'https://bookmyshow.com',org:'Chennai Events Co.',att:1240,tags:['live music','outdoor','family-friendly']},
+  {id:2,title:'Madras Food Festival',cat:'food',city:'chennai',zone:'T. Nagar',date:'2026-04-22',time:'11:00 AM',venue:'Nalli Silks Grounds, T. Nagar',price:'Free Entry',em:'🍜',grad:'linear-gradient(135deg,#f093fb,#f5576c)',desc:'Celebrate the rich culinary heritage of Madras with 50+ food stalls, celebrity chef demonstrations, and a street food trail through the flavors of old Chennai.',burl:'https://insider.in',org:'Tamil Nadu Tourism',att:3800,tags:['food','family','free entry']},
+  {id:3,title:'Stand-Up Comedy Night',cat:'comedy',city:'chennai',zone:'Nungambakkam',date:'2026-04-25',time:'8:00 PM',venue:'The Comedy Store, Nungambakkam',price:'₹400–₹800',em:'😂',grad:'linear-gradient(135deg,#4facfe,#00f2fe)',desc:"A night of non-stop laughter featuring Chennai's finest stand-up comedians in Tamil and English. Special headliner to be announced!",burl:'https://bookmyshow.com',org:'LOL Events Chennai',att:280,tags:['comedy','18+','indoor']},
+  {id:4,title:'Carnatic Classical Evening',cat:'cultural',city:'chennai',zone:'Mylapore',date:'2026-04-27',time:'5:30 PM',venue:'Mylapore Fine Arts Club',price:'₹100–₹500',em:'🎶',grad:'linear-gradient(135deg,#fa709a,#fee140)',desc:'An intimate evening of Carnatic classical music by the legendary Smt. Sudha Raghunathan. A rare opportunity to experience divine melodies in an intimate setting.',burl:'https://insider.in',org:'Mylapore Fine Arts',att:450,tags:['classical','cultural','indoor']},
+  {id:5,title:'ECR Beach Marathon',cat:'sports',city:'chennai',zone:'ECR',date:'2026-05-01',time:'6:00 AM',venue:'Neelankarai Beach, ECR',price:'₹300–₹1,000',em:'🏃',grad:'linear-gradient(135deg,#43e97b,#38f9d7)',desc:"Run along Chennai's East Coast Road with 5K, 10K and 21K categories. The scenic beach route makes this one of India's most loved marathon experiences.",burl:'https://procam.in',org:'Pro Marathon Events',att:5200,tags:['sports','outdoor','fitness']},
+  {id:6,title:'Tamil Short Film Awards',cat:'entertainment',city:'chennai',zone:'Adyar',date:'2026-05-03',time:'7:00 PM',venue:'Sathyam Cinemas, Adyar',price:'₹200–₹600',em:'🎬',grad:'linear-gradient(135deg,#a18cd1,#fbc2eb)',desc:'Celebrating the best in Tamil independent cinema — 20+ short films, red carpet, and Q&A sessions with renowned directors.',burl:'https://bookmyshow.com',org:'Tamil Film Federation',att:620,tags:['cinema','awards','arts']},
+  {id:7,title:'Art Walk – Fort St. George',cat:'art',city:'chennai',zone:'Mylapore',date:'2026-05-05',time:'10:00 AM',venue:'Fort Museum, Fort St. George',price:'₹50',em:'🎨',grad:'linear-gradient(135deg,#fccb90,#d57eeb)',desc:"A guided art walk through Chennai's historic Fort St. George, featuring contemporary installations alongside colonial-era artifacts.",burl:'https://insider.in',org:'Chennai Heritage Society',att:180,tags:['art','heritage','guided']},
+  {id:8,title:'Fusion Food Truck Fest',cat:'food',city:'chennai',zone:'Velachery',date:'2026-05-08',time:'5:00 PM',venue:'Phoenix Market City, Velachery',price:'Free Entry',em:'🚚',grad:'linear-gradient(135deg,#f77062,#fe5196)',desc:'30+ food trucks serving fusion cuisines — Korean BBQ tacos, butter chicken pizza, and more. A global food adventure in Chennai!',burl:'https://insider.in',org:'Street Eats Chennai',att:2100,tags:['food','family','outdoor']},
+  {id:9,title:'Bangalore Rock Fest',cat:'music',city:'bangalore',zone:'Indiranagar',date:'2026-04-21',time:'5:00 PM',venue:'Palace Grounds, Bengaluru',price:'₹800–₹3,500',em:'🎸',grad:'linear-gradient(135deg,#232526,#414345)',desc:"South India's biggest rock music festival — 15 bands across 3 stages. From metal to indie rock, the ultimate weekend for music lovers.",burl:'https://bookmyshow.com',org:'Bangalore Music Events',att:8500,tags:['rock','music','outdoor','18+']},
+  {id:10,title:'Namma Food Festival',cat:'food',city:'bangalore',zone:'Koramangala',date:'2026-04-23',time:'12:00 PM',venue:'Koramangala Indoor Stadium',price:'Free Entry',em:'🥘',grad:'linear-gradient(135deg,#f6d365,#fda085)',desc:"Celebrating Bengaluru's diverse food culture with 80+ stalls of Karnataka cuisine, North Indian street food, and trending new restaurants.",burl:'https://insider.in',org:'BBMP Tourism',att:6200,tags:['food','family','free entry']},
+  {id:11,title:'Comedy Open Mic Night',cat:'comedy',city:'bangalore',zone:'MG Road',date:'2026-04-26',time:'7:30 PM',venue:'Canvas Laugh Club, MG Road',price:'₹350–₹700',em:'🎤',grad:'linear-gradient(135deg,#0fd850,#f9f047)',desc:"12 comedians, 90 minutes of comedy gold in Hindi, English, and Kannada. Bangalore's top stand-up showcase.",burl:'https://bookmyshow.com',org:'Canvas Events',att:210,tags:['comedy','18+','indoor']},
+  {id:12,title:'Bharatanatyam Recital',cat:'cultural',city:'bangalore',zone:'Jayanagar',date:'2026-04-28',time:'6:00 PM',venue:'Ravindra Kalakshetra, Jayanagar',price:'₹150–₹400',em:'💃',grad:'linear-gradient(135deg,#ee9ca7,#ffdde1)',desc:'A breathtaking Bharatanatyam performance by acclaimed dancer Rukmini Vijayakumar — grace, expression, and classical Indian dance at its finest.',burl:'https://insider.in',org:'Kalakshetra Foundation',att:350,tags:['dance','classical','indoor']},
+  {id:13,title:'Bengaluru Heritage Run',cat:'sports',city:'bangalore',zone:'Cubbon Park',date:'2026-05-02',time:'6:30 AM',venue:'Cubbon Park, Central Bangalore',price:'₹200–₹800',em:'🏅',grad:'linear-gradient(135deg,#89f7fe,#66a6ff)',desc:"Run through Bengaluru's iconic heritage sites and lush green streets. A scenic 5K/10K celebrating the Garden City's history.",burl:'https://procam.in',org:'Bengaluru Runners Club',att:3400,tags:['sports','outdoor','fitness']},
+  {id:14,title:'Indie Film Screening',cat:'entertainment',city:'bangalore',zone:'Whitefield',date:'2026-05-04',time:'7:00 PM',venue:'Cinepolis INOX, Whitefield',price:'₹250–₹500',em:'🎞️',grad:'linear-gradient(135deg,#2c3e50,#fd746c)',desc:'4 shorts and 2 features from emerging Indian filmmakers — with director Q&A sessions after each screening.',burl:'https://bookmyshow.com',org:'Bangalore Film Society',att:420,tags:['cinema','indie','indoor']},
+  {id:15,title:'Contemporary Art Show',cat:'art',city:'bangalore',zone:'HSR Layout',date:'2026-05-06',time:'11:00 AM',venue:'Gallery Sumukha, HSR Layout',price:'Free Entry',em:'🖼️',grad:'linear-gradient(135deg,#667eea,#764ba2)',desc:'A 5-day showcase of contemporary Indian art — 25 artists presenting installations, paintings, sculptures, and digital art.',burl:'https://insider.in',org:'Gallery Sumukha',att:890,tags:['art','exhibition','free entry']},
+  {id:16,title:'Karnataka Cuisine Fest',cat:'food',city:'bangalore',zone:'Malleshwaram',date:'2026-05-09',time:'10:00 AM',venue:'Seshadri Park, Malleshwaram',price:'Free Entry',em:'🍚',grad:'linear-gradient(135deg,#f093fb,#f5576c)',desc:'Authentic Karnataka cuisine from Coorg, Udupi, Mangalore, and the Konkan coast — all in one delicious open festival.',burl:'https://insider.in',org:'Karnataka Govt. Tourism',att:4800,tags:['food','cultural','outdoor']},
 ];
 
-const NOTIFS_INIT = [
-  { id:1, type:'event', unread:true, icon:'🎵', iconBg:'#FFF0F1', title:'Chennai Music Fest starts tomorrow!', body:'Tickets still available for Apr 20 at 6 PM · MAA TV Arena.', time:'2 hours ago' },
-  { id:2, type:'recommendation', unread:true, icon:'🍽️', iconBg:'#FFF8F0', title:'New food events near you', body:'Madras Food Festival and Fusion Food Truck Fest match your food interest.', time:'5 hours ago' },
-  { id:3, type:'group', unread:true, icon:'👥', iconBg:'#F0F4FF', title:'Group invite from Priya', body:'Priya added you to a group booking for Stand-Up Comedy Night on Apr 25.', time:'1 day ago' },
-  { id:4, type:'digest', unread:false, icon:'📅', iconBg:'#F0FFF4', title:'Your weekend digest is ready', body:'5 events match your preferences this weekend. Check them out!', time:'2 days ago' },
-  { id:5, type:'reminder', unread:false, icon:'⏰', iconBg:'#FEFCE8', title:'Reminder: ECR Beach Marathon', body:'You saved this event — starts May 1 at 6 AM. Register before it fills up!', time:'3 days ago' },
+const NOTIFS_0=[
+  {id:1,unread:true,icon:'🎵',bg:'#FFF0F1',title:'Chennai Music Fest starts tomorrow!',body:'Tickets still available for Apr 20 at 6 PM · MAA TV Arena.',time:'2 hours ago'},
+  {id:2,unread:true,icon:'🍽️',bg:'#FFF8F0',title:'New food events near you',body:'Madras Food Festival and Fusion Food Truck Fest match your interest.',time:'5 hours ago'},
+  {id:3,unread:true,icon:'👥',bg:'#F0F4FF',title:'Group invite from Priya',body:'Priya added you to a group booking for Stand-Up Comedy Night.',time:'1 day ago'},
+  {id:4,unread:false,icon:'📅',bg:'#F0FFF4',title:'Your weekend digest is ready',body:'5 events match your preferences this weekend.',time:'2 days ago'},
+  {id:5,unread:false,icon:'⏰',bg:'#FEFCE8',title:'Reminder: ECR Beach Marathon',body:'Starts May 1 at 6 AM — register before it fills up!',time:'3 days ago'},
 ];
 
-const MARKETER = {
-  stats: [
-    { label:'Events Tracked', val:'47', icon:'📅' },
-    { label:'Active Users', val:'25.8K', icon:'👤' },
-    { label:'Booking Redirects', val:'3,402', icon:'🎟️' },
-    { label:'Campaigns Active', val:'12', icon:'📣' },
-  ],
-  age: [
-    { lbl:'18–24', pct:35 }, { lbl:'25–34', pct:42 }, { lbl:'35–44', pct:15 }, { lbl:'45+', pct:8 },
-  ],
-  cats: [
-    { lbl:'Music', pct:30, color:'#E63946' }, { lbl:'Food', pct:25, color:'#F4A261' },
-    { lbl:'Entertainment', pct:20, color:'#457B9D' }, { lbl:'Comedy', pct:15, color:'#4ECDC4' }, { lbl:'Others', pct:10, color:'#95A5A6' },
-  ],
-  zones: [
-    { lbl:'Anna Nagar', pct:22 }, { lbl:'T. Nagar', pct:18 }, { lbl:'Adyar', pct:15 },
-    { lbl:'Koramangala', pct:13 }, { lbl:'MG Road', pct:10 }, { lbl:'Others', pct:22 },
-  ],
-  campaigns: [
-    { name:'South Indian Music Summit Promo', status:'active', reach:'12,400', color:'#10B981' },
-    { name:'Weekend Food Lovers', status:'active', reach:'8,200', color:'#10B981' },
-    { name:'Comedy Night Blitz', status:'paused', reach:'3,800', color:'#F59E0B' },
-    { name:'Heritage Walk Awareness', status:'active', reach:'2,100', color:'#10B981' },
-  ],
+const MKT={
+  stats:[{lbl:'Events Tracked',val:'47',ic:'📅'},{lbl:'Active Users',val:'25.8K',ic:'👤'},{lbl:'Booking Redirects',val:'3,402',ic:'🎟️'},{lbl:'Campaigns Active',val:'12',ic:'📣'}],
+  age:[{l:'18–24',p:35},{l:'25–34',p:42},{l:'35–44',p:15},{l:'45+',p:8}],
+  cats:[{l:'Music',p:30,c:'#E63946'},{l:'Food',p:25,c:'#F4A261'},{l:'Entertainment',p:20,c:'#457B9D'},{l:'Comedy',p:15,c:'#4ECDC4'},{l:'Others',p:10,c:'#95A5A6'}],
+  zones:[{l:'Anna Nagar',p:22},{l:'T. Nagar',p:18},{l:'Adyar',p:15},{l:'Koramangala',p:13},{l:'MG Road',p:10},{l:'Others',p:22}],
+  camps:[{n:'South Indian Music Summit',st:'active',reach:'12,400',c:'#10B981'},{n:'Weekend Food Lovers',st:'active',reach:'8,200',c:'#10B981'},{n:'Comedy Night Blitz',st:'paused',reach:'3,800',c:'#F59E0B'},{n:'Heritage Walk Awareness',st:'active',reach:'2,100',c:'#10B981'}],
 };
 
-// ───────────── TRANSLATIONS ─────────────
+// ── TRANSLATIONS ──────────────────────────────────────────────────
 
-const T = {
-  en: {
-    appName: 'ChennaigotInteresting',
-    home: 'Home', explore: 'Explore', alerts: 'Alerts', profile: 'Profile',
-    bookNow: 'Book Now', groupBook: 'Group Book', share: 'Share',
-    searchPlaceholder: 'Search events…',
-    noEvents: 'No events found. Try adjusting your filters!',
-    recommended: 'Recommended for You', upcoming: 'Upcoming Events', nearYou: 'Near You',
-    seeAll: 'See all',
-    onb: {
-      welcome: 'Welcome!', tagline: 'Discover local events in Chennai & Bangalore',
-      chooseCity: 'Choose your city', citySub: 'We\'ll show events near you',
-      chooseLang: 'Choose language', langSub: 'We\'ll display the app in your language',
-      chooseInterests: 'What do you enjoy?', interestsSub: 'Select all that apply',
-      chooseZones: 'Preferred zones', zonesSub: 'Pick areas you like to visit',
-      next: 'Continue', finish: 'Get Started!', skip: 'Skip',
-      chennai: 'Chennai', chennaiDesc: '8 zones • 80+ events',
-      bangalore: 'Bangalore', bangaloreDesc: '8 zones • 70+ events',
-    },
-    detail: {
-      date: 'Date', time: 'Time', venue: 'Venue', price: 'Price',
-      about: 'About this Event', attending: 'people interested',
-      viewMap: 'View on Map', openMaps: '📍 Open in Google Maps',
-      confirmQ: 'Did you complete your booking?',
-      confirmSub: 'This helps us improve your recommendations.',
-      yes: '✓ Yes, booked!', notYet: 'Not yet',
-    },
-    group: {
-      title: 'Group Booking', eventFor: 'Booking for',
-      addSection: 'Add Group Members', name: 'Full Name', contact: 'Email or Phone',
-      addBtn: 'Add Member', members: 'Members Added', bookGroup: 'Book for Group',
-      noMembers: 'No members added yet', share: 'Share Invite Link',
-      whatsapp: '💬 WhatsApp', sms: '📱 SMS', copyLink: '🔗 Copy Link',
-    },
-    notifs: { title: 'Alerts & Reminders', markRead: 'Mark all read', empty: 'No alerts yet' },
-    profile: {
-      title: 'My Profile', bookings: 'Bookings', saved: 'Saved', reviews: 'Reviews',
-      myInterests: 'My Interests', editPrefs: 'Edit Preferences',
-      marketer: 'Marketer Dashboard', notifSettings: 'Notification Settings',
-      appLang: 'App Language', signOut: 'Sign Out',
-    },
-    marketer: {
-      title: 'Marketer Dashboard', subtitle: 'Audience insights & campaigns',
-      ageDist: 'Age Distribution', catBreak: 'Category Breakdown', zonePop: 'Zone Popularity',
-      campaigns: 'Active Campaigns', newCampaign: '+ New Campaign',
-    },
+const T={
+  en:{
+    app:'ChennaigotInteresting',
+    home:'Home',explore:'Explore',saved:'Saved',alerts:'Alerts',profile:'Profile',
+    bookNow:'Book Now',groupBook:'Group Book',share:'Share',save:'Save',
+    srch:'Search events…',noEvt:'No events found. Try changing your filters!',
+    featured:'Featured',recommended:'For You',upcoming:'Upcoming',nearYou:'Near You',seeAll:'See all',
+    ob:{welcome:'Welcome!',tag:'Discover events in Chennai & Bangalore',
+      city:'Choose your city',citySub:'We\'ll show events near you',
+      lang:'Choose language',langSub:'App will display in your language',
+      int:'What do you enjoy?',intSub:'Select all that apply',
+      zones:'Preferred zones',zonesSub:'Pick areas you visit often',
+      next:'Continue',finish:'Get Started!',skip:'Skip',back:'Back',
+      chennai:'Chennai',chennaiD:'8 zones · 80+ events',
+      blr:'Bangalore',blrD:'8 zones · 70+ events'},
+    det:{date:'Date',time:'Time',venue:'Venue',price:'Price',about:'About this Event',
+      attending:'people interested',openMap:'Open in Google Maps',
+      confirmQ:'Did you complete your booking?',confirmS:'This helps us improve your suggestions.',
+      yes:'Yes, I booked it!',notYet:'Not yet'},
+    grp:{title:'Group Booking',add:'Add Members',name:'Full Name',contact:'Email or Phone',
+      addBtn:'Add Member',members:'Members Added',book:'Book for Group',
+      noM:'Add members above',share:'Share Invite Link',copy:'Copy Link',wa:'WhatsApp'},
+    notif:{title:'Alerts & Reminders',markRead:'Mark all read',empty:'No alerts yet'},
+    prof:{title:'My Profile',bookings:'Bookings',savedLbl:'Saved',reviews:'Reviews',
+      interests:'My Interests',editPrefs:'Edit Preferences',marketer:'Marketer Dashboard',
+      notifS:'Notification Settings',appLang:'App Language',signOut:'Sign Out'},
+    mkt:{title:'Marketer Dashboard',sub:'Audience insights & campaigns',
+      age:'Age Distribution',cat:'Category Breakdown',zone:'Zone Popularity',camps:'Active Campaigns',newCamp:'+ New Campaign'},
+    savedPage:{title:'Saved Events',empty:'No saved events yet',emptySub:'Tap the ♡ on any event to save it here.'},
+    pref:{title:'Edit Preferences',save:'Save Changes'},
   },
-  ta: {
-    appName: 'சென்னைகொத்தில்சுவாரஸ்யம்',
-    home: 'முகப்பு', explore: 'ஆராய்', alerts: 'அறிவிப்புகள்', profile: 'சுயவிவரம்',
-    bookNow: 'முன்பதிவு', groupBook: 'குழு முன்பதிவு', share: 'பகிர்',
-    searchPlaceholder: 'நிகழ்வுகளை தேடுங்கள்…',
-    noEvents: 'நிகழ்வுகள் இல்லை. வடிப்பான்களை மாற்றுங்கள்!',
-    recommended: 'உங்களுக்கான பரிந்துரைகள்', upcoming: 'வரவிருக்கும் நிகழ்வுகள்', nearYou: 'உங்களுக்கு அருகே',
-    seeAll: 'அனைத்தும் பார்',
-    onb: {
-      welcome: 'வரவேற்கிறோம்!', tagline: 'சென்னை & பெங்களூரில் நிகழ்வுகளை கண்டறியுங்கள்',
-      chooseCity: 'உங்கள் நகரத்தை தேர்ந்தெடுக்கவும்', citySub: 'உங்களுக்கு அருகில் உள்ள நிகழ்வுகளை காட்டுவோம்',
-      chooseLang: 'மொழியை தேர்ந்தெடுக்கவும்', langSub: 'உங்கள் மொழியில் செயலியை காட்டுவோம்',
-      chooseInterests: 'நீங்கள் என்ன விரும்புகிறீர்கள்?', interestsSub: 'பொருந்தும் அனைத்தையும் தேர்ந்தெடுக்கவும்',
-      chooseZones: 'விருப்பமான பகுதிகள்', zonesSub: 'நீங்கள் விரும்பும் பகுதிகளை தேர்ந்தெடுக்கவும்',
-      next: 'தொடர்க', finish: 'தொடங்குங்கள்!', skip: 'தவிர்க்கவும்',
-      chennai: 'சென்னை', chennaiDesc: '8 மண்டலங்கள் • 80+ நிகழ்வுகள்',
-      bangalore: 'பெங்களூரு', bangaloreDesc: '8 மண்டலங்கள் • 70+ நிகழ்வுகள்',
-    },
-    detail: {
-      date: 'தேதி', time: 'நேரம்', venue: 'இடம்', price: 'கட்டணம்',
-      about: 'இந்த நிகழ்வைப் பற்றி', attending: 'பேர் ஆர்வமாக உள்ளனர்',
-      viewMap: 'வரைபடத்தில் பார்', openMaps: '📍 Google Maps-ல் திற',
-      confirmQ: 'முன்பதிவு முடிந்ததா?', confirmSub: 'இது உங்கள் பரிந்துரைகளை மேம்படுத்த உதவுகிறது.',
-      yes: '✓ ஆம், முன்பதிவு ஆனது!', notYet: 'இன்னும் இல்லை',
-    },
-    group: {
-      title: 'குழு முன்பதிவு', eventFor: 'முன்பதிவு',
-      addSection: 'குழு உறுப்பினர்களை சேர்க்கவும்', name: 'முழு பெயர்', contact: 'மின்னஞ்சல் அல்லது தொலைபேசி',
-      addBtn: 'உறுப்பினர் சேர்க்கவும்', members: 'சேர்க்கப்பட்ட உறுப்பினர்கள்', bookGroup: 'குழுவாக முன்பதிவு செய்யுங்கள்',
-      noMembers: 'இன்னும் உறுப்பினர்கள் இல்லை', share: 'அழைப்பு இணைப்பை பகிர்',
-      whatsapp: '💬 WhatsApp', sms: '📱 SMS', copyLink: '🔗 இணைப்பை நகலெடு',
-    },
-    notifs: { title: 'அறிவிப்புகள் & நினைவூட்டல்கள்', markRead: 'அனைத்தையும் படித்ததாக குறிக்கவும்', empty: 'இன்னும் அறிவிப்புகள் இல்லை' },
-    profile: {
-      title: 'என் சுயவிவரம்', bookings: 'முன்பதிவுகள்', saved: 'சேமித்தவை', reviews: 'மதிப்புரைகள்',
-      myInterests: 'என் ஆர்வங்கள்', editPrefs: 'விருப்பங்களை திருத்து',
-      marketer: 'சந்தையாளர் டாஷ்போர்டு', notifSettings: 'அறிவிப்பு அமைப்புகள்',
-      appLang: 'செயலி மொழி', signOut: 'வெளியேறு',
-    },
-    marketer: {
-      title: 'சந்தையாளர் டாஷ்போர்டு', subtitle: 'பார்வையாளர் நுண்ணறிவு & பிரச்சாரங்கள்',
-      ageDist: 'வயது விநியோகம்', catBreak: 'வகை பகுப்பு', zonePop: 'மண்டல பிரபலம்',
-      campaigns: 'செயலில் உள்ள பிரச்சாரங்கள்', newCampaign: '+ புதிய பிரச்சாரம்',
-    },
+  ta:{
+    app:'சென்னைகொத்தில்சுவாரஸ்யம்',
+    home:'முகப்பு',explore:'ஆராய்',saved:'சேமித்தவை',alerts:'அறிவிப்புகள்',profile:'சுயவிவரம்',
+    bookNow:'முன்பதிவு',groupBook:'குழு முன்பதிவு',share:'பகிர்',save:'சேமி',
+    srch:'நிகழ்வுகளை தேடுங்கள்…',noEvt:'நிகழ்வுகள் இல்லை. வடிப்பான்களை மாற்றுங்கள்!',
+    featured:'சிறப்பு',recommended:'உங்களுக்கானவை',upcoming:'வரவிருக்கும்',nearYou:'உங்களுக்கு அருகே',seeAll:'அனைத்தும் பார்',
+    ob:{welcome:'வரவேற்கிறோம்!',tag:'சென்னை & பெங்களூரில் நிகழ்வுகளை கண்டறியுங்கள்',
+      city:'உங்கள் நகரத்தை தேர்ந்தெடுக்கவும்',citySub:'உங்களுக்கு அருகில் உள்ள நிகழ்வுகளை காட்டுவோம்',
+      lang:'மொழியை தேர்ந்தெடுக்கவும்',langSub:'செயலி உங்கள் மொழியில் காட்டப்படும்',
+      int:'நீங்கள் என்ன விரும்புகிறீர்கள்?',intSub:'பொருந்தும் அனைத்தையும் தேர்ந்தெடுக்கவும்',
+      zones:'விருப்பமான பகுதிகள்',zonesSub:'நீங்கள் அடிக்கடி செல்லும் பகுதிகளை தேர்ந்தெடுக்கவும்',
+      next:'தொடர்க',finish:'தொடங்குங்கள்!',skip:'தவிர்க்கவும்',back:'பின்னால்',
+      chennai:'சென்னை',chennaiD:'8 மண்டலங்கள் · 80+ நிகழ்வுகள்',
+      blr:'பெங்களூரு',blrD:'8 மண்டலங்கள் · 70+ நிகழ்வுகள்'},
+    det:{date:'தேதி',time:'நேரம்',venue:'இடம்',price:'கட்டணம்',about:'இந்த நிகழ்வைப் பற்றி',
+      attending:'பேர் ஆர்வமாக உள்ளனர்',openMap:'Google Maps-ல் திற',
+      confirmQ:'முன்பதிவு முடிந்ததா?',confirmS:'இது உங்கள் பரிந்துரைகளை மேம்படுத்த உதவுகிறது.',
+      yes:'ஆம், முன்பதிவு ஆனது!',notYet:'இன்னும் இல்லை'},
+    grp:{title:'குழு முன்பதிவு',add:'உறுப்பினர்களை சேர்க்கவும்',name:'முழு பெயர்',contact:'மின்னஞ்சல் அல்லது தொலைபேசி',
+      addBtn:'உறுப்பினர் சேர்க்கவும்',members:'சேர்க்கப்பட்ட உறுப்பினர்கள்',book:'குழுவாக முன்பதிவு செய்யுங்கள்',
+      noM:'மேலே உறுப்பினர்களை சேர்க்கவும்',share:'அழைப்பு இணைப்பை பகிர்',copy:'இணைப்பை நகலெடு',wa:'WhatsApp'},
+    notif:{title:'அறிவிப்புகள் & நினைவூட்டல்கள்',markRead:'அனைத்தையும் படித்ததாக குறிக்கவும்',empty:'இன்னும் அறிவிப்புகள் இல்லை'},
+    prof:{title:'என் சுயவிவரம்',bookings:'முன்பதிவுகள்',savedLbl:'சேமித்தவை',reviews:'மதிப்புரைகள்',
+      interests:'என் ஆர்வங்கள்',editPrefs:'விருப்பங்களை திருத்து',marketer:'சந்தையாளர் டாஷ்போர்டு',
+      notifS:'அறிவிப்பு அமைப்புகள்',appLang:'செயலி மொழி',signOut:'வெளியேறு'},
+    mkt:{title:'சந்தையாளர் டாஷ்போர்டு',sub:'பார்வையாளர் நுண்ணறிவு & பிரச்சாரங்கள்',
+      age:'வயது விநியோகம்',cat:'வகை பகுப்பு',zone:'மண்டல பிரபலம்',camps:'செயலில் உள்ள பிரச்சாரங்கள்',newCamp:'+ புதிய பிரச்சாரம்'},
+    savedPage:{title:'சேமித்த நிகழ்வுகள்',empty:'இன்னும் சேமித்த நிகழ்வுகள் இல்லை',emptySub:'எந்த நிகழ்வையும் சேமிக்க ♡ அழுத்துங்கள்.'},
+    pref:{title:'விருப்பங்களை திருத்து',save:'மாற்றங்களை சேமி'},
   },
-  hi: {
-    appName: 'चेन्नईगोटइंटरेस्टिंग',
-    home: 'होम', explore: 'खोजें', alerts: 'सूचनाएं', profile: 'प्रोफाइल',
-    bookNow: 'बुक करें', groupBook: 'ग्रुप बुकिंग', share: 'शेयर करें',
-    searchPlaceholder: 'इवेंट खोजें…',
-    noEvents: 'कोई इवेंट नहीं मिला। फ़िल्टर बदलें!',
-    recommended: 'आपके लिए सुझाव', upcoming: 'आगामी इवेंट', nearYou: 'आपके पास',
-    seeAll: 'सभी देखें',
-    onb: {
-      welcome: 'स्वागत है!', tagline: 'चेन्नई और बेंगलुरू में इवेंट खोजें',
-      chooseCity: 'अपना शहर चुनें', citySub: 'हम आपके पास के इवेंट दिखाएंगे',
-      chooseLang: 'भाषा चुनें', langSub: 'हम ऐप आपकी भाषा में दिखाएंगे',
-      chooseInterests: 'आपकी रुचियां क्या हैं?', interestsSub: 'जो भी लागू हो, सभी चुनें',
-      chooseZones: 'पसंदीदा क्षेत्र', zonesSub: 'वे क्षेत्र चुनें जहाँ आप जाना पसंद करते हैं',
-      next: 'आगे बढ़ें', finish: 'शुरू करें!', skip: 'छोड़ें',
-      chennai: 'चेन्नई', chennaiDesc: '8 क्षेत्र • 80+ इवेंट',
-      bangalore: 'बेंगलुरू', bangaloreDesc: '8 क्षेत्र • 70+ इवेंट',
-    },
-    detail: {
-      date: 'तारीख', time: 'समय', venue: 'स्थान', price: 'कीमत',
-      about: 'इस इवेंट के बारे में', attending: 'लोग रुचि रखते हैं',
-      viewMap: 'मानचित्र पर देखें', openMaps: '📍 Google Maps में खोलें',
-      confirmQ: 'क्या आपने बुकिंग पूरी की?', confirmSub: 'इससे हम आपकी सिफारिशें बेहतर कर सकते हैं।',
-      yes: '✓ हाँ, बुक हो गया!', notYet: 'अभी नहीं',
-    },
-    group: {
-      title: 'ग्रुप बुकिंग', eventFor: 'बुकिंग',
-      addSection: 'ग्रुप सदस्य जोड़ें', name: 'पूरा नाम', contact: 'ईमेल या फोन',
-      addBtn: 'सदस्य जोड़ें', members: 'जोड़े गए सदस्य', bookGroup: 'ग्रुप के लिए बुक करें',
-      noMembers: 'अभी कोई सदस्य नहीं', share: 'इनवाइट लिंक शेयर करें',
-      whatsapp: '💬 WhatsApp', sms: '📱 SMS', copyLink: '🔗 लिंक कॉपी करें',
-    },
-    notifs: { title: 'सूचनाएं और रिमाइंडर', markRead: 'सभी पढ़ी हुई मार्क करें', empty: 'अभी कोई सूचना नहीं' },
-    profile: {
-      title: 'मेरी प्रोफाइल', bookings: 'बुकिंग', saved: 'सहेजे', reviews: 'समीक्षाएं',
-      myInterests: 'मेरी रुचियां', editPrefs: 'प्राथमिकताएं संपादित करें',
-      marketer: 'मार्केटर डैशबोर्ड', notifSettings: 'सूचना सेटिंग्स',
-      appLang: 'ऐप भाषा', signOut: 'साइन आउट',
-    },
-    marketer: {
-      title: 'मार्केटर डैशबोर्ड', subtitle: 'दर्शक अंतर्दृष्टि और अभियान',
-      ageDist: 'आयु वितरण', catBreak: 'श्रेणी विश्लेषण', zonePop: 'क्षेत्र लोकप्रियता',
-      campaigns: 'सक्रिय अभियान', newCampaign: '+ नया अभियान',
-    },
+  hi:{
+    app:'चेन्नईगोटइंटरेस्टिंग',
+    home:'होम',explore:'खोजें',saved:'सहेजे',alerts:'सूचनाएं',profile:'प्रोफाइल',
+    bookNow:'बुक करें',groupBook:'ग्रुप बुकिंग',share:'शेयर करें',save:'सहेजें',
+    srch:'इवेंट खोजें…',noEvt:'कोई इवेंट नहीं मिला। फ़िल्टर बदलें!',
+    featured:'फीचर्ड',recommended:'आपके लिए',upcoming:'आगामी',nearYou:'पास के',seeAll:'सभी देखें',
+    ob:{welcome:'स्वागत है!',tag:'चेन्नई और बेंगलुरू में इवेंट खोजें',
+      city:'अपना शहर चुनें',citySub:'हम आपके पास के इवेंट दिखाएंगे',
+      lang:'भाषा चुनें',langSub:'ऐप आपकी भाषा में दिखाई देगा',
+      int:'आपकी रुचियां क्या हैं?',intSub:'जो भी लागू हो सभी चुनें',
+      zones:'पसंदीदा क्षेत्र',zonesSub:'जहाँ आप अक्सर जाते हैं वे क्षेत्र चुनें',
+      next:'आगे बढ़ें',finish:'शुरू करें!',skip:'छोड़ें',back:'वापस',
+      chennai:'चेन्नई',chennaiD:'8 क्षेत्र · 80+ इवेंट',
+      blr:'बेंगलुरू',blrD:'8 क्षेत्र · 70+ इवेंट'},
+    det:{date:'तारीख',time:'समय',venue:'स्थान',price:'कीमत',about:'इस इवेंट के बारे में',
+      attending:'लोग रुचि रखते हैं',openMap:'Google Maps में खोलें',
+      confirmQ:'क्या आपने बुकिंग पूरी की?',confirmS:'इससे हम आपके सुझाव बेहतर कर सकते हैं।',
+      yes:'हाँ, बुक हो गया!',notYet:'अभी नहीं'},
+    grp:{title:'ग्रुप बुकिंग',add:'सदस्य जोड़ें',name:'पूरा नाम',contact:'ईमेल या फोन',
+      addBtn:'सदस्य जोड़ें',members:'जोड़े गए सदस्य',book:'ग्रुप के लिए बुक करें',
+      noM:'ऊपर सदस्य जोड़ें',share:'इनवाइट लिंक शेयर करें',copy:'लिंक कॉपी करें',wa:'WhatsApp'},
+    notif:{title:'सूचनाएं और रिमाइंडर',markRead:'सभी पढ़ी हुई मार्क करें',empty:'अभी कोई सूचना नहीं'},
+    prof:{title:'मेरी प्रोफाइल',bookings:'बुकिंग',savedLbl:'सहेजे',reviews:'समीक्षाएं',
+      interests:'मेरी रुचियां',editPrefs:'प्राथमिकताएं संपादित करें',marketer:'मार्केटर डैशबोर्ड',
+      notifS:'सूचना सेटिंग्स',appLang:'ऐप भाषा',signOut:'साइन आउट'},
+    mkt:{title:'मार्केटर डैशबोर्ड',sub:'दर्शक अंतर्दृष्टि और अभियान',
+      age:'आयु वितरण',cat:'श्रेणी विश्लेषण',zone:'क्षेत्र लोकप्रियता',camps:'सक्रिय अभियान',newCamp:'+ नया अभियान'},
+    savedPage:{title:'सहेजे गए इवेंट',empty:'अभी कोई सहेजा इवेंट नहीं',emptySub:'किसी भी इवेंट पर ♡ दबाएं।'},
+    pref:{title:'प्राथमिकताएं संपादित करें',save:'परिवर्तन सहेजें'},
   },
 };
 
-// ───────────── UTILS ─────────────
+// ── UTILS ─────────────────────────────────────────────────────────
 
-function tr(lang, ...path) {
-  let o = T[lang] || T.en;
-  for (const k of path) { o = o?.[k]; }
-  if (o === undefined) {
-    let fb = T.en;
-    for (const k of path) { fb = fb?.[k]; }
-    return fb ?? path[path.length - 1];
-  }
+function tr(lang,...path){
+  let o=T[lang]||T.en;
+  for(const k of path){o=o?.[k];}
+  if(o===undefined){let fb=T.en;for(const k of path)fb=fb?.[k];return fb??path[path.length-1];}
   return o;
 }
+function catLbl(id,lang){const c=CATS.find(x=>x.id===id);return c?(c[lang]||c.en):id;}
+function catEm(id){return CATS.find(x=>x.id===id)?.em||'🎪';}
+function fmtD(s){try{return new Date(s+'T00:00:00').toLocaleDateString('en-IN',{weekday:'short',day:'numeric',month:'short'});}catch{return s;}}
 
-function catLabel(cat, lang) {
-  const c = CATEGORIES.find(x => x.id === cat);
-  return c ? (c[lang] || c.en) : cat;
+// ── CONTEXT ───────────────────────────────────────────────────────
+
+const Ctx=createContext(null);
+
+// ── SHARED COMPONENTS ─────────────────────────────────────────────
+
+function Toast({msg}){return <div className="toast">{msg}</div>;}
+
+function SaveBtn({id,style={}}){
+  const {saved,toggleSave}=useContext(Ctx);
+  const on=saved.has(id);
+  return(
+    <button className="card-sm-save" style={style}
+      onClick={e=>{e.stopPropagation();toggleSave(id);}}>
+      {on?'❤️':'🤍'}
+    </button>
+  );
 }
 
-function fmtDate(dateStr) {
-  try {
-    const d = new Date(dateStr + 'T00:00:00');
-    return d.toLocaleDateString('en-IN', { weekday:'short', day:'numeric', month:'short' });
-  } catch { return dateStr; }
-}
-
-function catEmoji(cat) {
-  return CATEGORIES.find(x => x.id === cat)?.emoji || '🎪';
-}
-
-// ───────────── CONTEXT ─────────────
-
-const Ctx = createContext(null);
-
-// ───────────── COMPONENTS ─────────────
-
-function Toast({ msg }) {
-  return <div className="toast">{msg}</div>;
-}
-
-function EventCardSmall({ event, onClick }) {
-  const { lang } = useContext(Ctx);
-  return (
-    <div className="event-card-sm" onClick={() => onClick(event)}>
-      <div className="event-hero-sm" style={{ background: event.gradient }}>{event.emoji}</div>
-      <div className="event-body-sm">
-        <div className="event-title-sm">{event.title}</div>
-        <div className="event-date-sm">{fmtDate(event.date)} · {event.zone}</div>
+function EventCardSm({ev,onClick}){
+  const {saved,toggleSave}=useContext(Ctx);
+  return(
+    <div className="card-sm" onClick={()=>onClick(ev)}>
+      <div className="card-sm-hero" style={{background:ev.grad}}>
+        {ev.em}
+        <button className="card-sm-save" onClick={e=>{e.stopPropagation();toggleSave(ev.id);}}>
+          {saved.has(ev.id)?'❤️':'🤍'}
+        </button>
+      </div>
+      <div className="card-sm-body">
+        <div className="card-sm-title">{ev.title}</div>
+        <div className="card-sm-date">{fmtD(ev.date)} · {ev.zone}</div>
       </div>
     </div>
   );
 }
 
-function EventCard({ event, onBook, onDetail }) {
-  const { lang } = useContext(Ctx);
-  return (
-    <div className="event-card" onClick={() => onDetail(event)}>
-      <div className="event-hero" style={{ background: event.gradient }}>
-        {event.emoji}
-        <div className="event-cat-badge">{catEmoji(event.category)} {catLabel(event.category, lang)}</div>
-        <div className="event-price-badge">{event.price}</div>
+function EventCard({ev,onDetail,onBook}){
+  const {lang,saved,toggleSave}=useContext(Ctx);
+  return(
+    <div className="card" onClick={()=>onDetail(ev)}>
+      <div className="card-hero" style={{background:ev.grad}}>
+        {ev.em}
+        <div className="card-cat">{catEm(ev.cat)} {catLbl(ev.cat,lang)}</div>
+        <div className="card-price">{ev.price}</div>
+        <button className="card-save" onClick={e=>{e.stopPropagation();toggleSave(ev.id);}}>
+          {saved.has(ev.id)?'❤️':'🤍'}
+        </button>
       </div>
-      <div className="event-body">
-        <div className="event-title">{event.title}</div>
-        <div className="event-meta">
-          <div className="event-meta-row">📅 {fmtDate(event.date)} · {event.time}</div>
-          <div className="event-meta-row">📍 {event.venue}</div>
-          <div className="event-meta-row">👥 {event.attending.toLocaleString('en-IN')} {tr(lang,'detail','attending')}</div>
+      <div className="card-body">
+        <div className="card-title">{ev.title}</div>
+        <div className="card-meta">
+          <div className="card-row">📅 {fmtD(ev.date)} · {ev.time}</div>
+          <div className="card-row">📍 {ev.venue}</div>
+          <div className="card-row">👥 {ev.att.toLocaleString('en-IN')} {tr(lang,'det','attending')}</div>
         </div>
-        <div className="event-footer">
-          <button className="event-book-btn" onClick={e => { e.stopPropagation(); onBook(event); }}>
-            {tr(lang,'bookNow')} →
+        <div className="card-foot">
+          <button className="card-book" onClick={e=>{e.stopPropagation();onBook(ev);}}>
+            🎟️ {tr(lang,'bookNow')} →
           </button>
-          <button className="event-icon-btn" onClick={e => { e.stopPropagation(); alert(`Share link for "${event.title}" copied!`); }}>
-            🔗
-          </button>
+          <button className="card-share" onClick={e=>{e.stopPropagation();navigator.clipboard?.writeText(`https://chennaigot.app/event/${ev.id}`);}} title="Share">🔗</button>
         </div>
       </div>
     </div>
   );
 }
 
-// ───────────── PAGES ─────────────
+// ── ONBOARDING ────────────────────────────────────────────────────
 
-// ONBOARDING
-function OnboardingPage({ onComplete }) {
-  const [step, setStep] = useState(0);
-  const [city, setCity] = useState('');
-  const [lang, setLang] = useState('en');
-  const [interests, setInterests] = useState([]);
-  const [zones, setZones] = useState([]);
+function Onboarding({onDone}){
+  const [step,setStep]=useState(0);
+  const [city,setCity]=useState('');
+  const [lang,setLang]=useState('en');
+  const [ints,setInts]=useState([]);
+  const [zones,setZones]=useState([]);
+  const tot=4;
+  const toggleInt=id=>setInts(p=>p.includes(id)?p.filter(x=>x!==id):[...p,id]);
+  const toggleZone=z=>setZones(p=>p.includes(z)?p.filter(x=>x!==z):[...p,z]);
+  const canNext=step===0?!!city:step===1?!!lang:true;
+  const doNext=()=>step<tot-1?setStep(s=>s+1):onDone({city,lang,interests:ints,zones});
 
-  const steps = ['city','lang','interests','zones'];
-  const total = steps.length;
-
-  function toggleInterest(id) {
-    setInterests(p => p.includes(id) ? p.filter(x => x !== id) : [...p, id]);
-  }
-  function toggleZone(z) {
-    setZones(p => p.includes(z) ? p.filter(x => x !== z) : [...p, z]);
-  }
-
-  function handleNext() {
-    if (step < total - 1) setStep(s => s + 1);
-    else onComplete({ city, lang, interests, zones });
-  }
-
-  const cities = [
-    { id:'chennai', emoji:'🌊', name: tr(lang,'onb','chennai'), desc: tr(lang,'onb','chennaiDesc') },
-    { id:'bangalore', emoji:'🌳', name: tr(lang,'onb','bangalore'), desc: tr(lang,'onb','bangaloreDesc') },
+  const cities=[
+    {id:'chennai',em:'🌊',nm:tr(lang,'ob','chennai'),dc:tr(lang,'ob','chennaiD')},
+    {id:'bangalore',em:'🌳',nm:tr(lang,'ob','blr'),dc:tr(lang,'ob','blrD')},
   ];
-  const langs = [
-    { id:'en', flag:'🇬🇧', name:'English', native:'English' },
-    { id:'ta', flag:'🇮🇳', name:'Tamil', native:'தமிழ்' },
-    { id:'hi', flag:'🇮🇳', name:'Hindi', native:'हिंदी' },
+  const langs=[
+    {id:'en',fl:'🇬🇧',nm:'English',na:'English'},
+    {id:'ta',fl:'🇮🇳',nm:'Tamil',na:'தமிழ்'},
+    {id:'hi',fl:'🇮🇳',nm:'Hindi',na:'हिंदी'},
   ];
 
-  const canNext = step === 0 ? !!city : step === 1 ? !!lang : true;
-
-  return (
-    <div className="onboarding">
+  return(
+    <div className="ob">
       <div className="ob-hero">
         <div className="ob-logo">🎉</div>
-        <div className="ob-app-name">{tr(lang,'appName')}</div>
-        <div className="ob-tagline">{tr(lang,'onb','tagline')}</div>
+        <div className="ob-name">{tr(lang,'app')}</div>
+        <div className="ob-tag">{tr(lang,'ob','tag')}</div>
       </div>
-      <div className="ob-progress">
-        {steps.map((_, i) => (
-          <div key={i} className={`ob-dot ${i < step ? 'done' : i === step ? 'active' : 'pending'}`} />
+      <div className="ob-prog">
+        {Array.from({length:tot},(_,i)=>(
+          <div key={i} className={`ob-d ${i<step?'done':i===step?'on':'off'}`}/>
         ))}
       </div>
       <div className="ob-body">
-        {step === 0 && (<>
-          <div className="ob-title">{tr(lang,'onb','chooseCity')}</div>
-          <div className="ob-sub">{tr(lang,'onb','citySub')}</div>
+        {step===0&&<>
+          <div className="ob-t">{tr(lang,'ob','city')}</div>
+          <div className="ob-s">{tr(lang,'ob','citySub')}</div>
           <div className="city-grid">
-            {cities.map(c => (
-              <div key={c.id} className={`city-card ${city === c.id ? 'selected' : ''}`} onClick={() => setCity(c.id)}>
-                <div className="city-card-emoji">{c.emoji}</div>
-                <div className="city-card-name">{c.name}</div>
-                <div className="city-card-desc">{c.desc}</div>
+            {cities.map(c=>(
+              <div key={c.id} className={`city-card${city===c.id?' sel':''}`} onClick={()=>setCity(c.id)}>
+                <div className="city-em">{c.em}</div>
+                <div className="city-nm">{c.nm}</div>
+                <div className="city-dc">{c.dc}</div>
               </div>
             ))}
           </div>
-        </>)}
-
-        {step === 1 && (<>
-          <div className="ob-title">{tr(lang,'onb','chooseLang')}</div>
-          <div className="ob-sub">{tr(lang,'onb','langSub')}</div>
+        </>}
+        {step===1&&<>
+          <div className="ob-t">{tr(lang,'ob','lang')}</div>
+          <div className="ob-s">{tr(lang,'ob','langSub')}</div>
           <div className="lang-list">
-            {langs.map(l => (
-              <div key={l.id} className={`lang-card ${lang === l.id ? 'selected' : ''}`} onClick={() => setLang(l.id)}>
-                <div className="lang-flag">{l.flag}</div>
+            {langs.map(l=>(
+              <div key={l.id} className={`lang-card${lang===l.id?' sel':''}`} onClick={()=>setLang(l.id)}>
+                <span style={{fontSize:26}}>{l.fl}</span>
                 <div>
-                  <div className="lang-name">{l.name}</div>
-                  <div className="lang-native">{l.native}</div>
+                  <div style={{fontWeight:700,fontSize:15}}>{l.nm}</div>
+                  <div style={{fontSize:13,color:'var(--t2)'}}>{l.na}</div>
                 </div>
-                {lang === l.id && <span style={{marginLeft:'auto',color:'var(--primary)',fontWeight:700}}>✓</span>}
+                {lang===l.id&&<span style={{marginLeft:'auto',color:'var(--red)',fontWeight:700,fontSize:18}}>✓</span>}
               </div>
             ))}
           </div>
-        </>)}
-
-        {step === 2 && (<>
-          <div className="ob-title">{tr(lang,'onb','chooseInterests')}</div>
-          <div className="ob-sub">{tr(lang,'onb','interestsSub')}</div>
+        </>}
+        {step===2&&<>
+          <div className="ob-t">{tr(lang,'ob','int')}</div>
+          <div className="ob-s">{tr(lang,'ob','intSub')}</div>
           <div className="chips">
-            {INTERESTS.map(i => (
-              <div key={i.id} className={`chip ${interests.includes(i.id) ? 'selected' : ''}`} onClick={() => toggleInterest(i.id)}>
-                {i.emoji} {i[lang] || i.en}
+            {INTERESTS.map(i=>(
+              <div key={i.id} className={`chip${ints.includes(i.id)?' sel':''}`} onClick={()=>toggleInt(i.id)}>
+                {i.em} {i[lang]||i.en}
               </div>
             ))}
           </div>
-        </>)}
-
-        {step === 3 && (<>
-          <div className="ob-title">{tr(lang,'onb','chooseZones')}</div>
-          <div className="ob-sub">{tr(lang,'onb','zonesSub')}</div>
+        </>}
+        {step===3&&<>
+          <div className="ob-t">{tr(lang,'ob','zones')}</div>
+          <div className="ob-s">{tr(lang,'ob','zonesSub')}</div>
           <div className="chips">
-            {(ZONES[city] || []).map(z => (
-              <div key={z} className={`chip ${zones.includes(z) ? 'selected' : ''}`} onClick={() => toggleZone(z)}>
+            {(ZONES[city]||[]).map(z=>(
+              <div key={z} className={`chip${zones.includes(z)?' sel':''}`} onClick={()=>toggleZone(z)}>
                 📍 {z}
               </div>
             ))}
           </div>
-        </>)}
+        </>}
       </div>
-      <div className="ob-footer">
-        {step > 0 && (
-          <button className="btn btn-ghost" onClick={() => setStep(s => s - 1)}>← Back</button>
-        )}
-        {(step === 2 || step === 3) && (
-          <button className="btn btn-ghost" style={{marginLeft:'auto',marginRight:0}} onClick={() => step < total-1 ? setStep(s=>s+1) : onComplete({city,lang,interests,zones})}>
-            {tr(lang,'onb','skip')}
+      <div className="ob-foot">
+        {step>0&&<button className="btn btn-ghost" onClick={()=>setStep(s=>s-1)}>← {tr(lang,'ob','back')}</button>}
+        {(step===2||step===3)&&(
+          <button className="btn btn-ghost" style={{marginLeft:'auto'}}
+            onClick={()=>step<tot-1?setStep(s=>s+1):onDone({city,lang,interests:ints,zones})}>
+            {tr(lang,'ob','skip')}
           </button>
         )}
-        <button className="btn btn-primary" style={{flex:1}} onClick={handleNext} disabled={!canNext}
-          style={{flex:1,opacity:canNext?1:.5,background:'var(--primary)',color:'white',borderRadius:'999px',border:'none',padding:'13px 20px',fontWeight:700,fontSize:'15px',cursor:canNext?'pointer':'default'}}>
-          {step < total - 1 ? tr(lang,'onb','next') : tr(lang,'onb','finish')}
+        <button className="btn btn-red" style={{flex:1,opacity:canNext?1:.45,pointerEvents:canNext?'auto':'none'}}
+          onClick={doNext}>
+          {step<tot-1?tr(lang,'ob','next'):tr(lang,'ob','finish')}
         </button>
       </div>
     </div>
   );
 }
 
-// BOOKING CONFIRM SHEET
-function BookingSheet({ event, onYes, onNo, lang }) {
-  return (
-    <div className="sheet-overlay" onClick={onNo}>
-      <div className="sheet" onClick={e => e.stopPropagation()}>
-        <div className="sheet-handle" />
-        <div className="sheet-emoji">🎟️</div>
-        <div className="sheet-title">{tr(lang,'detail','confirmQ')}</div>
-        <div className="sheet-sub">{tr(lang,'detail','confirmSub')}</div>
-        <div className="sheet-btns">
-          <button className="btn btn-success btn-full btn-lg" onClick={onYes}>{tr(lang,'detail','yes')}</button>
-          <button className="btn btn-ghost btn-full btn-lg" onClick={onNo}>{tr(lang,'detail','notYet')}</button>
-        </div>
-      </div>
-    </div>
-  );
-}
+// ── HOME PAGE ─────────────────────────────────────────────────────
 
-// HOME
-function HomePage({ onDetail, onBook }) {
-  const { user, lang, notifs } = useContext(Ctx);
-  const [search, setSearch] = useState('');
-  const [catFilter, setCatFilter] = useState('all');
-  const [dateFilter, setDateFilter] = useState('');
-  const [zoneFilter, setZoneFilter] = useState('all');
+function HomePage({filters,setFilters,onDetail,onBook}){
+  const {lang,user,saved,toggleSave}=useContext(Ctx);
+  const cityEvs=EVENTS.filter(e=>!user.city||e.city===user.city);
 
-  const cityEvents = EVENTS.filter(e => !user.city || e.city === user.city);
+  const filtered=useMemo(()=>cityEvs.filter(e=>{
+    if(filters.cat!=='all'&&e.cat!==filters.cat)return false;
+    if(filters.zone!=='all'&&e.zone!==filters.zone)return false;
+    if(filters.date&&e.date!==filters.date)return false;
+    if(filters.search){
+      const q=filters.search.toLowerCase();
+      if(!e.title.toLowerCase().includes(q)&&!e.venue.toLowerCase().includes(q)&&!e.zone.toLowerCase().includes(q))return false;
+    }
+    return true;
+  }),[filters,user.city]);
 
-  const filtered = useMemo(() => {
-    return cityEvents.filter(e => {
-      if (catFilter !== 'all' && e.category !== catFilter) return false;
-      if (dateFilter && e.date !== dateFilter) return false;
-      if (zoneFilter !== 'all' && e.zone !== zoneFilter) return false;
-      if (search) {
-        const q = search.toLowerCase();
-        if (!e.title.toLowerCase().includes(q) && !e.venue.toLowerCase().includes(q) && !e.zone.toLowerCase().includes(q)) return false;
-      }
-      return true;
-    });
-  }, [catFilter, dateFilter, zoneFilter, search, user.city]);
+  const recommended=useMemo(()=>{
+    if(!user.interests?.length)return cityEvs.slice(0,6);
+    const matched=cityEvs.filter(e=>user.interests.includes(e.cat));
+    return matched.length?matched.slice(0,6):cityEvs.slice(0,6);
+  },[user]);
 
-  const recommended = useMemo(() => {
-    if (!user.interests?.length) return cityEvents.slice(0, 5);
-    return cityEvents.filter(e => user.interests.includes(e.category)).slice(0, 5);
-  }, [user]);
+  const featuredEv=cityEvs.find(e=>e.att>1000)||cityEvs[0];
+  const isFiltering=filters.cat!=='all'||filters.zone!=='all'||filters.date||filters.search;
+  const cityZones=ZONES[user.city]||[];
 
-  const unreadCount = notifs.filter(n => n.unread).length;
-
-  const cityZones = ZONES[user.city] || [];
-
-  return (
+  return(
     <div>
-      <div className="search-wrap">
-        <div className="search-inner">
-          <span className="search-icon">🔍</span>
-          <input className="search-input" placeholder={tr(lang,'searchPlaceholder')}
-            value={search} onChange={e => setSearch(e.target.value)} />
-          {search && <span style={{cursor:'pointer',color:'var(--text-3)',fontSize:'16px'}} onClick={() => setSearch('')}>✕</span>}
+      {/* Search bar */}
+      <div className="srch-wrap">
+        <div className="srch-inner">
+          <span style={{fontSize:15,color:'var(--t3)'}}>🔍</span>
+          <input className="srch-in" placeholder={tr(lang,'srch')}
+            value={filters.search} onChange={e=>setFilters(f=>({...f,search:e.target.value}))}/>
+          {filters.search&&<span style={{cursor:'pointer',color:'var(--t3)',fontSize:15}} onClick={()=>setFilters(f=>({...f,search:''}))}>✕</span>}
         </div>
       </div>
 
-      <div className="filter-bar">
-        {CATEGORIES.map(c => (
-          <div key={c.id} className={`filter-chip ${catFilter === c.id ? 'active' : ''}`}
-            onClick={() => setCatFilter(c.id)}>
-            {c.emoji} {c[lang] || c.en}
-          </div>
+      {/* Category pills */}
+      <div className="pills">
+        {CATS.map(c=>(
+          <button key={c.id} className={`pill${filters.cat===c.id?' on':''}`}
+            onClick={()=>setFilters(f=>({...f,cat:c.id}))}>
+            {c.em} {c[lang]||c.en}
+          </button>
         ))}
       </div>
 
-      <div style={{display:'flex',gap:'8px',padding:'0 14px 12px',overflowX:'auto',scrollbarWidth:'none'}}>
-        <input type="date" className="date-filter" value={dateFilter} onChange={e => setDateFilter(e.target.value)}
-          style={{flexShrink:0}} />
-        <select className="date-filter" value={zoneFilter} onChange={e => setZoneFilter(e.target.value)}
-          style={{flexShrink:0,cursor:'pointer'}}>
+      {/* Date + Zone + Clear */}
+      <div style={{display:'flex',gap:8,padding:'0 14px 10px',overflowX:'auto',scrollbarWidth:'none'}}>
+        <input type="date" className="sel-input" value={filters.date}
+          onChange={e=>setFilters(f=>({...f,date:e.target.value}))} style={{flexShrink:0}}/>
+        <select className="sel-input" value={filters.zone}
+          onChange={e=>setFilters(f=>({...f,zone:e.target.value}))} style={{flexShrink:0,cursor:'pointer'}}>
           <option value="all">📍 All Zones</option>
-          {cityZones.map(z => <option key={z} value={z}>{z}</option>)}
+          {cityZones.map(z=><option key={z} value={z}>{z}</option>)}
         </select>
-        {(catFilter !== 'all' || dateFilter || zoneFilter !== 'all' || search) && (
-          <button className="filter-chip" style={{background:'#FFF0F1',color:'var(--primary)',borderColor:'var(--primary)',flexShrink:0}}
-            onClick={() => { setCatFilter('all'); setDateFilter(''); setZoneFilter('all'); setSearch(''); }}>
+        {isFiltering&&(
+          <button className="pill on" style={{flexShrink:0}}
+            onClick={()=>setFilters({cat:'all',zone:'all',date:'',search:''})}>
             ✕ Clear
           </button>
         )}
       </div>
 
-      {!search && catFilter === 'all' && !dateFilter && zoneFilter === 'all' && recommended.length > 0 && (
-        <div>
-          <div className="section-hdr">
-            <div className="section-title">⭐ {tr(lang,'recommended')}</div>
+      {/* Content — show sections only when not actively filtering */}
+      {!isFiltering&&(
+        <>
+          {/* Featured */}
+          {featuredEv&&(
+            <div style={{padding:'4px 14px 0'}}>
+              <div className="feat" onClick={()=>onDetail(featuredEv)}>
+                <div className="feat-img" style={{background:featuredEv.grad}}>
+                  {featuredEv.em}
+                  <div className="feat-overlay"/>
+                </div>
+                <div className="feat-badge">⭐ {tr(lang,'featured')}</div>
+                <div className="feat-body">
+                  <div className="feat-title">{featuredEv.title}</div>
+                  <div className="feat-meta">📅 {fmtD(featuredEv.date)} · 📍 {featuredEv.zone}</div>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* For You */}
+          {recommended.length>0&&(
+            <>
+              <div className="sec-h">
+                <div className="sec-t">⭐ {tr(lang,'recommended')}</div>
+                <div className="sec-lk" onClick={()=>setFilters(f=>({...f,cat:'all'}))}>{tr(lang,'seeAll')}</div>
+              </div>
+              <div className="h-scroll">
+                {recommended.map(e=><EventCardSm key={e.id} ev={e} onClick={onDetail}/>)}
+              </div>
+            </>
+          )}
+
+          <div className="sec-h">
+            <div className="sec-t">🗓 {tr(lang,'upcoming')}</div>
+            <div style={{fontSize:12,color:'var(--t2)'}}>{filtered.length} events</div>
           </div>
-          <div className="events-h-scroll">
-            {recommended.map(e => <EventCardSmall key={e.id} event={e} onClick={onDetail} />)}
-          </div>
-          <div className="section-hdr" style={{paddingTop:'4px'}}>
-            <div className="section-title">🗓 {tr(lang,'upcoming')}</div>
-            <div className="section-link">{filtered.length} events</div>
+        </>
+      )}
+
+      {isFiltering&&(
+        <div className="sec-h">
+          <div className="sec-t">
+            {filtered.length} {filtered.length===1?'event':'events'} found
           </div>
         </div>
       )}
 
-      <div className="events-feed">
-        {filtered.length === 0 ? (
-          <div className="empty-state">
-            <div className="empty-emoji">🔍</div>
-            <div className="empty-title">No events found</div>
-            <div className="empty-sub">{tr(lang,'noEvents')}</div>
+      {/* Main event list */}
+      <div className="feed" style={{paddingBottom:8}}>
+        {filtered.length===0?(
+          <div className="empty">
+            <em>🔍</em>
+            <h3>No events found</h3>
+            <p>{tr(lang,'noEvt')}</p>
+            {isFiltering&&<button className="btn btn-red btn-sm" style={{marginTop:14}} onClick={()=>setFilters({cat:'all',zone:'all',date:'',search:''})}>Clear Filters</button>}
           </div>
-        ) : filtered.map(e => (
-          <EventCard key={e.id} event={e} onBook={onBook} onDetail={onDetail} />
+        ):filtered.map(e=><EventCard key={e.id} ev={e} onDetail={onDetail} onBook={onBook}/>)}
+      </div>
+    </div>
+  );
+}
+
+// ── EXPLORE PAGE ──────────────────────────────────────────────────
+
+function ExplorePage({filters,setFilters,onDetail,onBook}){
+  const {lang,user,saved,toggleSave}=useContext(Ctx);
+  const [selCat,setSelCat]=useState(null);
+  const [selZone,setSelZone]=useState(null);
+  const cityEvs=EVENTS.filter(e=>!user.city||e.city===user.city);
+  const cityZones=ZONES[user.city]||[];
+
+  // Events to show when a category or zone is selected
+  const expEvts=useMemo(()=>{
+    if(!selCat&&!selZone)return[];
+    return cityEvs.filter(e=>{
+      if(selCat&&e.cat!==selCat)return false;
+      if(selZone&&e.zone!==selZone)return false;
+      return true;
+    });
+  },[selCat,selZone,user.city]);
+
+  const inBrowse=!selCat&&!selZone;
+
+  function selectCat(id){setSelCat(id);setSelZone(null);}
+  function selectZone(z){setSelZone(z);setSelCat(null);}
+  function clearSel(){setSelCat(null);setSelZone(null);}
+
+  const catGrads={
+    music:'linear-gradient(135deg,#667eea,#764ba2)',
+    food:'linear-gradient(135deg,#f6d365,#fda085)',
+    entertainment:'linear-gradient(135deg,#a18cd1,#fbc2eb)',
+    comedy:'linear-gradient(135deg,#0fd850,#f9f047)',
+    art:'linear-gradient(135deg,#fccb90,#d57eeb)',
+    sports:'linear-gradient(135deg,#43e97b,#38f9d7)',
+    cultural:'linear-gradient(135deg,#ee9ca7,#ffdde1)',
+  };
+
+  return(
+    <div className="exp-page">
+      {!inBrowse&&(
+        <button className="exp-back" onClick={clearSel}>
+          ← {selCat?catLbl(selCat,lang)+' Events':selZone+' Events'}
+        </button>
+      )}
+
+      {inBrowse&&(
+        <>
+          <div style={{fontWeight:700,fontSize:15,marginBottom:12}}>Browse by Category</div>
+          <div className="cat-grid">
+            {CATS.filter(c=>c.id!=='all').map(c=>{
+              const cnt=cityEvs.filter(e=>e.cat===c.id).length;
+              return(
+                <div key={c.id} className={`cat-card${selCat===c.id?' on':''}`} onClick={()=>selectCat(c.id)}>
+                  <div className="cat-hero" style={{background:catGrads[c.id]||'#eee'}}>{c.em}</div>
+                  <div className="cat-nm">{c[lang]||c.en}</div>
+                  <div className="cat-ct">{cnt} event{cnt!==1?'s':''}</div>
+                </div>
+              );
+            })}
+          </div>
+
+          <div style={{fontWeight:700,fontSize:15,margin:'16px 0 10px'}}>Browse by Zone</div>
+          <div className="chips">
+            {cityZones.map(z=>(
+              <div key={z} className="chip" onClick={()=>selectZone(z)}>📍 {z}</div>
+            ))}
+          </div>
+        </>
+      )}
+
+      {!inBrowse&&(
+        <div className="exp-events">
+          {expEvts.length===0?(
+            <div className="empty">
+              <em>🤷</em>
+              <h3>No events here</h3>
+              <p>No events found for this filter. Try another category or zone.</p>
+            </div>
+          ):expEvts.map(e=>(
+            <EventCard key={e.id} ev={e} onDetail={onDetail} onBook={onBook}/>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ── SAVED PAGE ────────────────────────────────────────────────────
+
+function SavedPage({onDetail,onBook}){
+  const {lang,saved}=useContext(Ctx);
+  const savedEvts=EVENTS.filter(e=>saved.has(e.id));
+  return(
+    <div className="saved-page">
+      {savedEvts.length===0?(
+        <div className="saved-empty">
+          <div style={{fontSize:52,marginBottom:10}}>🤍</div>
+          <div style={{fontSize:17,fontWeight:700,marginBottom:8}}>{tr(lang,'savedPage','empty')}</div>
+          <div style={{fontSize:13,color:'var(--t2)',lineHeight:1.6}}>{tr(lang,'savedPage','emptySub')}</div>
+        </div>
+      ):(
+        <div className="saved-grid">
+          {savedEvts.map(e=><EventCard key={e.id} ev={e} onDetail={onDetail} onBook={onBook}/>)}
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ── EVENT DETAIL ──────────────────────────────────────────────────
+
+function EventDetail({ev,onBack,onBook,onGroupBook}){
+  const {lang,saved,toggleSave}=useContext(Ctx);
+  const avLetters=['P','R','A','K'];
+  return(
+    <div className="det">
+      <div className="det-hero" style={{background:ev.grad}}>
+        <button className="det-back" onClick={onBack}>←</button>
+        <div className="det-acts">
+          <button className="det-act" onClick={()=>toggleSave(ev.id)}>{saved.has(ev.id)?'❤️':'🤍'}</button>
+          <button className="det-act" onClick={()=>{navigator.clipboard?.writeText(`https://chennaigot.app/event/${ev.id}`);}}>🔗</button>
+        </div>
+        {ev.em}
+      </div>
+      <div className="det-body">
+        <div className="det-cat">{catEm(ev.cat)} {catLbl(ev.cat,lang)}</div>
+        <div className="det-title">{ev.title}</div>
+        <div className="det-org">By {ev.org}</div>
+        <div className="info-grid">
+          <div className="info-c"><div className="info-lbl">{tr(lang,'det','date')}</div><div className="info-val">{fmtD(ev.date)}</div></div>
+          <div className="info-c"><div className="info-lbl">{tr(lang,'det','time')}</div><div className="info-val">{ev.time}</div></div>
+          <div className="info-c wide"><div className="info-lbl">{tr(lang,'det','venue')}</div><div className="info-val">📍 {ev.venue}</div></div>
+          <div className="info-c"><div className="info-lbl">{tr(lang,'det','price')}</div><div className="info-val" style={{color:'var(--red)'}}>{ev.price}</div></div>
+          <div className="info-c"><div className="info-lbl">Interested</div><div className="info-val">{ev.att.toLocaleString('en-IN')}</div></div>
+        </div>
+        <div className="att-row">
+          <div className="avs">{avLetters.map((l,i)=><div key={i} className="av">{l}</div>)}</div>
+          <div style={{fontSize:13,color:'var(--t2)',flex:1}}>+{(ev.att-4).toLocaleString('en-IN')} {tr(lang,'det','attending')}</div>
+        </div>
+        <button className="map-btn" style={{width:'100%'}}
+          onClick={()=>window.open(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(ev.venue+', India')}`)}>
+          <span style={{fontSize:30}}>🗺️</span>
+          <span style={{fontSize:13,fontWeight:600,color:'var(--t2)'}}>📍 {tr(lang,'det','openMap')}</span>
+          <span style={{fontSize:11,color:'var(--t3)'}}>{ev.venue}</span>
+        </button>
+        <div style={{fontWeight:700,fontSize:15,marginBottom:9}}>{tr(lang,'det','about')}</div>
+        <div className="det-desc">{ev.desc}</div>
+        <div className="tags">{ev.tags.map(t=><span key={t} className="tg">{t}</span>)}</div>
+      </div>
+      <div className="det-foot">
+        <button className="btn btn-out" style={{flex:1}} onClick={()=>onGroupBook(ev)}>👥 {tr(lang,'groupBook')}</button>
+        <button className="btn btn-red" style={{flex:2}} onClick={()=>onBook(ev)}>🎟️ {tr(lang,'bookNow')}</button>
+      </div>
+    </div>
+  );
+}
+
+// ── GROUP BOOKING ─────────────────────────────────────────────────
+
+function GroupBooking({ev,onBack,onBook}){
+  const {lang}=useContext(Ctx);
+  const [name,setName]=useState('');
+  const [contact,setContact]=useState('');
+  const [members,setMembers]=useState([]);
+  const addMember=()=>{
+    if(!name.trim())return;
+    setMembers(p=>[...p,{id:Date.now(),name:name.trim(),contact:contact.trim()}]);
+    setName('');setContact('');
+  };
+  const link=`https://chennaigot.app/group/${ev.id}-${Date.now().toString(36)}`;
+  return(
+    <div style={{background:'var(--bg)',minHeight:'100vh'}}>
+      <div className="header">
+        <button className="icon-btn" onClick={onBack}>←</button>
+        <div className="header-title" style={{textAlign:'center'}}>{tr(lang,'grp','title')}</div>
+        <div style={{width:36}}/>
+      </div>
+      <div className="grp-page">
+        <div className="evt-mini">
+          <div className="evt-mini-em" style={{background:ev.grad}}>{ev.em}</div>
+          <div>
+            <div style={{fontWeight:700,fontSize:14,marginBottom:3}}>{ev.title}</div>
+            <div style={{fontSize:12,color:'var(--t2)'}}>📅 {fmtD(ev.date)} · {ev.time}</div>
+            <div style={{fontSize:12,color:'var(--t2)'}}>📍 {ev.zone}</div>
+          </div>
+        </div>
+
+        <div className="form-sec">
+          <div className="form-sec-t">👤 {tr(lang,'grp','add')}</div>
+          <div className="form-g">
+            <label className="form-lbl">{tr(lang,'grp','name')}</label>
+            <input className="form-in" placeholder="e.g. Priya Rajan" value={name}
+              onChange={e=>setName(e.target.value)} onKeyDown={e=>e.key==='Enter'&&addMember()}/>
+          </div>
+          <div className="form-g">
+            <label className="form-lbl">{tr(lang,'grp','contact')}</label>
+            <input className="form-in" placeholder="e.g. priya@email.com" value={contact}
+              onChange={e=>setContact(e.target.value)} onKeyDown={e=>e.key==='Enter'&&addMember()}/>
+          </div>
+          <button className="btn btn-red btn-w" onClick={addMember}
+            style={{opacity:name.trim()?1:.45,pointerEvents:name.trim()?'auto':'none'}}>
+            + {tr(lang,'grp','addBtn')}
+          </button>
+        </div>
+
+        {members.length>0&&(
+          <div className="form-sec">
+            <div className="form-sec-t">👥 {tr(lang,'grp','members')} ({members.length})</div>
+            <div className="m-list">
+              {members.map(m=>(
+                <div key={m.id} className="m-item">
+                  <div className="m-av">{m.name[0].toUpperCase()}</div>
+                  <div style={{flex:1}}>
+                    <div style={{fontWeight:600,fontSize:14}}>{m.name}</div>
+                    {m.contact&&<div style={{fontSize:12,color:'var(--t2)'}}>{m.contact}</div>}
+                  </div>
+                  <button className="m-rm" onClick={()=>setMembers(p=>p.filter(x=>x.id!==m.id))}>✕</button>
+                </div>
+              ))}
+            </div>
+            <div style={{fontWeight:600,fontSize:12,color:'var(--t2)',marginBottom:8}}>{tr(lang,'grp','share')}</div>
+            <div style={{display:'flex',gap:8}}>
+              <button className="btn btn-sm" style={{background:'#25D366',color:'#fff',flex:1}}
+                onClick={()=>window.open(`https://wa.me/?text=Join us: ${ev.title} ${link}`)}>
+                💬 {tr(lang,'grp','wa')}
+              </button>
+              <button className="btn btn-ghost btn-sm" style={{flex:1}}
+                onClick={()=>{navigator.clipboard?.writeText(link);alert('Link copied!');}}>
+                🔗 {tr(lang,'grp','copy')}
+              </button>
+            </div>
+          </div>
+        )}
+        {members.length===0&&<div style={{textAlign:'center',padding:'20px',color:'var(--t3)',fontSize:14}}>{tr(lang,'grp','noM')}</div>}
+      </div>
+      <div className="grp-foot">
+        <div style={{fontSize:13,color:'var(--t2)',marginBottom:8}}>
+          {members.length>0?`Booking ${members.length+1} tickets (you + ${members.length})`:'Add members to continue'}
+        </div>
+        <button className="btn btn-red btn-w btn-lg" onClick={()=>{if(members.length===0){alert('Add at least one member.');return;}onBook(ev,members);}}
+          style={{opacity:members.length>0?1:.45}}>
+          🎟️ {tr(lang,'grp','book')} ({members.length+1} tickets)
+        </button>
+      </div>
+    </div>
+  );
+}
+
+// ── NOTIFICATIONS ─────────────────────────────────────────────────
+
+function AlertsPage(){
+  const {lang,notifs,setNotifs}=useContext(Ctx);
+  const markAll=()=>setNotifs(p=>p.map(n=>({...n,unread:false})));
+  return(
+    <div>
+      <div style={{padding:'12px 14px 0',display:'flex',alignItems:'center',justifyContent:'space-between'}}>
+        <div style={{fontSize:15,fontWeight:700}}>{tr(lang,'notif','title')}</div>
+        {notifs.some(n=>n.unread)&&(
+          <button className="btn btn-ghost btn-sm" style={{color:'var(--red)',padding:'6px 12px',fontSize:13}} onClick={markAll}>
+            {tr(lang,'notif','markRead')}
+          </button>
+        )}
+      </div>
+      <div className="notif-list">
+        {notifs.length===0?(
+          <div className="empty"><em>🔔</em><h3>{tr(lang,'notif','empty')}</h3><p>We'll notify you about events matching your interests.</p></div>
+        ):notifs.map(n=>(
+          <div key={n.id} className={`notif-item${n.unread?' unread':''}`}
+            onClick={()=>setNotifs(p=>p.map(x=>x.id===n.id?{...x,unread:false}:x))}>
+            <div className="n-icon" style={{background:n.bg}}>{n.icon}</div>
+            <div style={{flex:1}}>
+              <div className="n-title">{n.title}</div>
+              <div className="n-body">{n.body}</div>
+              <div className="n-time">{n.time}</div>
+            </div>
+            {n.unread&&<div className="n-badge"/>}
+          </div>
         ))}
       </div>
     </div>
   );
 }
 
-// EXPLORE
-function ExplorePage({ onCatFilter }) {
-  const { lang, user } = useContext(Ctx);
-  const cityEvents = EVENTS.filter(e => !user.city || e.city === user.city);
+// ── PREFERENCES (edit within app) ────────────────────────────────
 
-  return (
-    <div className="explore-page">
-      <div style={{padding:'8px 0 16px'}}>
-        <div className="section-title" style={{marginBottom:'14px'}}>Browse by Category</div>
-        <div className="explore-grid">
-          {CATEGORIES.filter(c => c.id !== 'all').map(c => {
-            const count = cityEvents.filter(e => e.category === c.id).length;
-            return (
-              <div key={c.id} className="explore-cat-card" onClick={() => onCatFilter(c.id)}>
-                <div className="explore-cat-hero" style={{
-                  background: c.id === 'music' ? 'linear-gradient(135deg,#667eea,#764ba2)' :
-                    c.id === 'food' ? 'linear-gradient(135deg,#f6d365,#fda085)' :
-                    c.id === 'entertainment' ? 'linear-gradient(135deg,#a18cd1,#fbc2eb)' :
-                    c.id === 'comedy' ? 'linear-gradient(135deg,#0fd850,#f9f047)' :
-                    c.id === 'art' ? 'linear-gradient(135deg,#fccb90,#d57eeb)' :
-                    c.id === 'sports' ? 'linear-gradient(135deg,#43e97b,#38f9d7)' :
-                    'linear-gradient(135deg,#ee9ca7,#ffdde1)'
-                }}>{c.emoji}</div>
-                <div className="explore-cat-name">{c[lang] || c.en}</div>
-                <div className="explore-cat-count">{count} events</div>
-              </div>
-            );
-          })}
+function PrefsPage({onBack,onSave}){
+  const {lang,user,setLang}=useContext(Ctx);
+  const [ints,setInts]=useState(user.interests||[]);
+  const [zones,setZones]=useState(user.zones||[]);
+  const cityZones=ZONES[user.city]||[];
+  const toggleI=id=>setInts(p=>p.includes(id)?p.filter(x=>x!==id):[...p,id]);
+  const toggleZ=z=>setZones(p=>p.includes(z)?p.filter(x=>x!==z):[...p,z]);
+  return(
+    <div style={{background:'#fff',minHeight:'100vh'}}>
+      <div className="header">
+        <button className="icon-btn" onClick={onBack}>←</button>
+        <div className="header-title" style={{textAlign:'center'}}>{tr(lang,'pref','title')}</div>
+        <div style={{width:36}}/>
+      </div>
+      <div style={{padding:16,paddingBottom:100}}>
+        <div style={{fontWeight:700,fontSize:14,marginBottom:10}}>App Language</div>
+        <div className="lang-row" style={{margin:'0 0 20px'}}>
+          {['en','ta','hi'].map(l=>(
+            <button key={l} className={`lang-btn${lang===l?' on':''}`} onClick={()=>setLang(l)}>
+              {l==='en'?'🇬🇧 English':l==='ta'?'🇮🇳 தமிழ்':'🇮🇳 हिंदी'}
+            </button>
+          ))}
         </div>
-
-        <div className="section-hdr" style={{marginTop:'8px'}}>
-          <div className="section-title">Browse by Zone</div>
+        <div style={{fontWeight:700,fontSize:14,marginBottom:10}}>{tr(lang,'ob','int')}</div>
+        <div className="chips">
+          {INTERESTS.map(i=>(
+            <div key={i.id} className={`chip${ints.includes(i.id)?' sel':''}`} onClick={()=>toggleI(i.id)}>
+              {i.em} {i[lang]||i.en}
+            </div>
+          ))}
         </div>
-        <div style={{display:'flex',flexWrap:'wrap',gap:'8px',padding:'0 0 8px'}}>
-          {(ZONES[user.city] || []).map(z => (
-            <div key={z} className="chip" style={{cursor:'pointer'}} onClick={() => onCatFilter('all', z)}>
+        <div style={{fontWeight:700,fontSize:14,marginBottom:10}}>{tr(lang,'ob','zones')}</div>
+        <div className="chips">
+          {cityZones.map(z=>(
+            <div key={z} className={`chip${zones.includes(z)?' sel':''}`} onClick={()=>toggleZ(z)}>
               📍 {z}
             </div>
           ))}
         </div>
       </div>
-    </div>
-  );
-}
-
-// EVENT DETAIL
-function EventDetailPage({ event, onBack, onBook, onGroupBook }) {
-  const { lang } = useContext(Ctx);
-  const avatarLetters = ['P','R','A','K'];
-
-  function handleMapClick() {
-    const query = encodeURIComponent(event.venue + ', India');
-    window.open(`https://www.google.com/maps/search/?api=1&query=${query}`, '_blank');
-  }
-
-  return (
-    <div className="event-detail">
-      <div className="event-detail-hero" style={{background: event.gradient}}>
-        <button className="back-btn" onClick={onBack}>←</button>
-        <button className="share-btn-hero" onClick={() => alert(`Share link: https://chennaigot.app/event/${event.id}`)}>🔗</button>
-        {event.emoji}
-      </div>
-      <div className="event-detail-body">
-        <div className="detail-cat-chip">{catEmoji(event.category)} {catLabel(event.category, lang)}</div>
-        <div className="detail-title">{event.title}</div>
-        <div className="detail-org">By {event.organizer}</div>
-
-        <div className="detail-info-grid">
-          <div className="detail-info-card">
-            <div className="detail-info-label">{tr(lang,'detail','date')}</div>
-            <div className="detail-info-val">{fmtDate(event.date)}</div>
-          </div>
-          <div className="detail-info-card">
-            <div className="detail-info-label">{tr(lang,'detail','time')}</div>
-            <div className="detail-info-val">{event.time}</div>
-          </div>
-          <div className="detail-info-card" style={{gridColumn:'span 2'}}>
-            <div className="detail-info-label">{tr(lang,'detail','venue')}</div>
-            <div className="detail-info-val">📍 {event.venue}</div>
-          </div>
-          <div className="detail-info-card">
-            <div className="detail-info-label">{tr(lang,'detail','price')}</div>
-            <div className="detail-info-val" style={{color:'var(--primary)'}}>{event.price}</div>
-          </div>
-          <div className="detail-info-card">
-            <div className="detail-info-label">Interested</div>
-            <div className="detail-info-val">{event.attending.toLocaleString('en-IN')}</div>
-          </div>
-        </div>
-
-        <div className="attending-row">
-          <div className="avatars">
-            {avatarLetters.map((l,i) => <div key={i} className="av">{l}</div>)}
-          </div>
-          <div className="attending-text">
-            +{(event.attending - 4).toLocaleString('en-IN')} {tr(lang,'detail','attending')}
-          </div>
-        </div>
-
-        <div className="map-block" onClick={handleMapClick}>
-          <span style={{fontSize:'32px'}}>🗺️</span>
-          <span style={{fontSize:'13px',color:'var(--text-2)',fontWeight:600}}>{tr(lang,'detail','openMaps')}</span>
-          <span style={{fontSize:'12px',color:'var(--text-3)'}}>{event.venue}</span>
-        </div>
-
-        <div style={{fontWeight:700,fontSize:'15px',marginBottom:'10px'}}>{tr(lang,'detail','about')}</div>
-        <div className="detail-desc">{event.description}</div>
-
-        <div className="tags-row">
-          {event.tags.map(t => <span key={t} className="tag-chip">{t}</span>)}
-        </div>
-      </div>
-      <div className="detail-footer">
-        <button className="btn btn-outline" onClick={() => onGroupBook(event)} style={{flex:1}}>
-          👥 {tr(lang,'groupBook')}
-        </button>
-        <button className="btn btn-primary" onClick={() => onBook(event)} style={{flex:2}}>
-          🎟️ {tr(lang,'bookNow')}
+      <div style={{position:'fixed',bottom:0,left:'50%',transform:'translateX(-50%)',width:'100%',maxWidth:430,padding:'12px 16px',background:'#fff',borderTop:'1px solid var(--border)'}}>
+        <button className="btn btn-red btn-w btn-lg" onClick={()=>onSave({interests:ints,zones})}>
+          {tr(lang,'pref','save')}
         </button>
       </div>
     </div>
   );
 }
 
-// GROUP BOOKING
-function GroupBookingPage({ event, onBack, onBook }) {
-  const { lang } = useContext(Ctx);
-  const [name, setName] = useState('');
-  const [contact, setContact] = useState('');
-  const [members, setMembers] = useState([]);
+// ── PROFILE PAGE ──────────────────────────────────────────────────
 
-  function addMember() {
-    if (!name.trim()) return;
-    setMembers(p => [...p, { id: Date.now(), name: name.trim(), contact: contact.trim() }]);
-    setName(''); setContact('');
-  }
-
-  function removeMember(id) {
-    setMembers(p => p.filter(m => m.id !== id));
-  }
-
-  function handleBook() {
-    if (members.length === 0) { alert('Please add at least one group member.'); return; }
-    onBook(event, members);
-  }
-
-  const inviteLink = `https://chennaigot.app/group-invite/${event.id}-${Date.now().toString(36)}`;
-
-  return (
-    <div style={{background:'var(--bg)',minHeight:'100vh'}}>
-      <div className="app-header">
-        <button className="icon-btn" onClick={onBack}>←</button>
-        <div style={{flex:1,textAlign:'center',fontWeight:700,fontSize:'16px'}}>{tr(lang,'group','title')}</div>
-        <div style={{width:36}} />
+function ProfilePage({onMarketer,onPrefs}){
+  const {lang,setLang,user,saved}=useContext(Ctx);
+  const cityName=user.city==='chennai'?tr(lang,'ob','chennai'):tr(lang,'ob','blr');
+  return(
+    <div className="prof-page">
+      <div className="prof-hero">
+        <div className="prof-av">🙂</div>
+        <div className="prof-name">{cityName} Explorer</div>
+        <div className="prof-sub">📍 {cityName}</div>
       </div>
-      <div className="group-page">
-        <div className="event-mini-card">
-          <div className="event-mini-emoji" style={{background:event.gradient}}>{event.emoji}</div>
-          <div>
-            <div className="event-mini-title">{event.title}</div>
-            <div className="event-mini-date">📅 {fmtDate(event.date)} · {event.time}</div>
-            <div className="event-mini-date">📍 {event.zone}</div>
-          </div>
-        </div>
-
-        <div className="form-section">
-          <div className="form-section-title">👤 {tr(lang,'group','addSection')}</div>
-          <div className="form-group">
-            <label className="form-label">{tr(lang,'group','name')}</label>
-            <input className="form-input" placeholder="e.g. Priya Rajan" value={name} onChange={e => setName(e.target.value)}
-              onKeyDown={e => e.key === 'Enter' && addMember()} />
-          </div>
-          <div className="form-group">
-            <label className="form-label">{tr(lang,'group','contact')}</label>
-            <input className="form-input" placeholder="e.g. priya@email.com or 98765XXXXX" value={contact}
-              onChange={e => setContact(e.target.value)} onKeyDown={e => e.key === 'Enter' && addMember()} />
-          </div>
-          <button className="btn btn-primary btn-full" onClick={addMember} disabled={!name.trim()}
-            style={{opacity:name.trim()?1:.5}}>
-            + {tr(lang,'group','addBtn')}
-          </button>
-        </div>
-
-        {members.length > 0 && (
-          <div className="form-section">
-            <div className="form-section-title">👥 {tr(lang,'group','members')} ({members.length})</div>
-            <div className="member-list">
-              {members.map((m,i) => (
-                <div key={m.id} className="member-item">
-                  <div className="member-av">{m.name[0].toUpperCase()}</div>
-                  <div style={{flex:1}}>
-                    <div className="member-name">{m.name}</div>
-                    {m.contact && <div className="member-contact">{m.contact}</div>}
-                  </div>
-                  <button className="member-remove" onClick={() => removeMember(m.id)}>✕</button>
-                </div>
-              ))}
-            </div>
-
-            <div style={{fontWeight:600,fontSize:'13px',marginBottom:'8px',color:'var(--text-2)'}}>
-              🔗 {tr(lang,'group','share')}
-            </div>
-            <div className="share-row">
-              <button className="btn btn-ghost btn-sm btn-full" style={{background:'#25D366',color:'white'}}
-                onClick={() => window.open(`https://wa.me/?text=Join us for ${event.title}! ${inviteLink}`)}>
-                {tr(lang,'group','whatsapp')}
-              </button>
-              <button className="btn btn-ghost btn-sm btn-full"
-                onClick={() => { navigator.clipboard?.writeText(inviteLink); alert('Link copied!'); }}>
-                {tr(lang,'group','copyLink')}
-              </button>
-            </div>
-          </div>
-        )}
-
-        {members.length === 0 && (
-          <div style={{textAlign:'center',padding:'24px',color:'var(--text-3)',fontSize:'14px'}}>
-            👆 Add members above to create your group
-          </div>
-        )}
-      </div>
-      <div className="group-footer">
-        <div style={{fontSize:'13px',color:'var(--text-2)',marginBottom:'8px'}}>
-          {members.length > 0 ? `Booking for ${members.length + 1} people (you + ${members.length})` : 'Add members to proceed'}
-        </div>
-        <button className="btn btn-primary btn-full btn-lg" onClick={handleBook} disabled={members.length === 0}
-          style={{opacity:members.length>0?1:.5}}>
-          🎟️ {tr(lang,'group','bookGroup')} ({members.length + 1} tickets)
-        </button>
-      </div>
-    </div>
-  );
-}
-
-// NOTIFICATIONS
-function NotificationsPage() {
-  const { lang, notifs, setNotifs } = useContext(Ctx);
-
-  function markAllRead() {
-    setNotifs(p => p.map(n => ({ ...n, unread: false })));
-  }
-
-  const iconBgMap = { event:'#FFF0F1', recommendation:'#FFF8F0', group:'#F0F4FF', digest:'#F0FFF4', reminder:'#FEFCE8' };
-
-  return (
-    <div>
-      <div className="notif-header-bar">
-        <div className="section-title">{tr(lang,'notifs','title')}</div>
-        {notifs.some(n => n.unread) && (
-          <button className="btn btn-ghost btn-sm" onClick={markAllRead}
-            style={{color:'var(--primary)',padding:'6px 12px',fontSize:'13px'}}>
-            {tr(lang,'notifs','markRead')}
-          </button>
-        )}
-      </div>
-      <div className="notif-list">
-        {notifs.length === 0 ? (
-          <div className="empty-state">
-            <div className="empty-emoji">🔔</div>
-            <div className="empty-title">{tr(lang,'notifs','empty')}</div>
-            <div className="empty-sub">We'll notify you about events matching your interests.</div>
-          </div>
-        ) : notifs.map(n => (
-          <div key={n.id} className={`notif-item ${n.unread ? 'unread' : ''}`}
-            onClick={() => setNotifs(p => p.map(x => x.id === n.id ? {...x, unread:false} : x))}>
-            <div className="notif-icon-box" style={{background: n.iconBg || '#F3F4F6'}}>{n.icon}</div>
-            <div className="notif-content">
-              <div className="notif-title">{n.title}</div>
-              <div className="notif-body">{n.body}</div>
-              <div className="notif-time">{n.time}</div>
-            </div>
-            {n.unread && <div style={{width:8,height:8,borderRadius:'50%',background:'var(--primary)',flexShrink:0,marginTop:4}} />}
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-// PROFILE
-function ProfilePage({ onMarketer, onEditPrefs }) {
-  const { lang, setLang, user } = useContext(Ctx);
-  const cityEvents = EVENTS.filter(e => e.city === user.city);
-
-  return (
-    <div className="profile-page">
-      <div className="profile-hero">
-        <div className="profile-av">🙂</div>
-        <div className="profile-name">
-          {user.city === 'chennai' ? 'Chennai' : 'Bangalore'} Explorer
-        </div>
-        <div className="profile-city">
-          📍 {user.city === 'chennai' ? tr(lang,'onb','chennai') : tr(lang,'onb','bangalore')}
-        </div>
-      </div>
-      <div className="profile-stats-card">
+      <div className="prof-card">
         <div className="stats-row">
-          <div className="stat-box"><div className="stat-num">3</div><div className="stat-lbl">{tr(lang,'profile','bookings')}</div></div>
-          <div className="stat-box"><div className="stat-num">7</div><div className="stat-lbl">{tr(lang,'profile','saved')}</div></div>
-          <div className="stat-box"><div className="stat-num">2</div><div className="stat-lbl">{tr(lang,'profile','reviews')}</div></div>
+          <div className="stat"><div className="stat-n">3</div><div className="stat-l">{tr(lang,'prof','bookings')}</div></div>
+          <div className="stat"><div className="stat-n">{saved.size}</div><div className="stat-l">{tr(lang,'prof','savedLbl')}</div></div>
+          <div className="stat"><div className="stat-n">2</div><div className="stat-l">{tr(lang,'prof','reviews')}</div></div>
         </div>
-        <div style={{fontSize:'12px',color:'var(--text-2)',fontWeight:600,marginBottom:'8px'}}>{tr(lang,'profile','myInterests')}</div>
-        <div className="interests-preview">
-          {(user.interests?.length ? user.interests : ['music','food','entertainment']).map(i => {
-            const item = INTERESTS.find(x => x.id === i);
-            return item ? (
-              <span key={i} className="chip selected" style={{padding:'5px 12px',fontSize:'12px',cursor:'default'}}>
-                {item.emoji} {item[lang] || item.en}
-              </span>
-            ) : null;
+        <div style={{fontSize:12,color:'var(--t2)',fontWeight:700,marginBottom:8}}>{tr(lang,'prof','interests')}</div>
+        <div className="chips" style={{marginBottom:0}}>
+          {(user.interests?.length?user.interests:['music','food','entertainment']).map(i=>{
+            const item=INTERESTS.find(x=>x.id===i);
+            return item?<div key={i} className="chip sel" style={{cursor:'default',padding:'5px 12px',fontSize:12}}>{item.em} {item[lang]||item.en}</div>:null;
           })}
         </div>
       </div>
 
-      <div style={{padding:'0 14px 8px',fontSize:'12px',fontWeight:700,color:'var(--text-2)',textTransform:'uppercase',letterSpacing:'.5px'}}>
-        {tr(lang,'profile','appLang')}
+      <div style={{padding:'0 14px 8px',fontSize:11,fontWeight:700,color:'var(--t2)',textTransform:'uppercase',letterSpacing:.5}}>
+        {tr(lang,'prof','appLang')}
       </div>
-      <div className="lang-toggle-row">
-        {['en','ta','hi'].map(l => (
-          <button key={l} className={`lang-btn ${lang === l ? 'active' : ''}`} onClick={() => setLang(l)}>
-            {l === 'en' ? '🇬🇧 EN' : l === 'ta' ? '🇮🇳 த' : '🇮🇳 हि'}
+      <div className="lang-row">
+        {['en','ta','hi'].map(l=>(
+          <button key={l} className={`lang-btn${lang===l?' on':''}`} onClick={()=>setLang(l)}>
+            {l==='en'?'🇬🇧 EN':l==='ta'?'🇮🇳 த':' 🇮🇳 हि'}
           </button>
         ))}
       </div>
 
       <div className="menu-card">
-        <div className="menu-item" onClick={onEditPrefs}>
-          <div className="menu-icon">⚙️</div>
-          <div className="menu-label">{tr(lang,'profile','editPrefs')}</div>
-          <div className="menu-arrow">›</div>
+        <div className="menu-item" onClick={onPrefs}>
+          <div className="menu-ic">⚙️</div><div className="menu-lbl">{tr(lang,'prof','editPrefs')}</div><div className="menu-arr">›</div>
         </div>
         <div className="menu-item" onClick={onMarketer}>
-          <div className="menu-icon">📊</div>
-          <div className="menu-label">{tr(lang,'profile','marketer')}</div>
-          <div className="menu-arrow">›</div>
+          <div className="menu-ic">📊</div><div className="menu-lbl">{tr(lang,'prof','marketer')}</div><div className="menu-arr">›</div>
         </div>
         <div className="menu-item">
-          <div className="menu-icon">🔔</div>
-          <div className="menu-label">{tr(lang,'profile','notifSettings')}</div>
-          <div className="menu-arrow">›</div>
+          <div className="menu-ic">🔔</div><div className="menu-lbl">{tr(lang,'prof','notifS')}</div><div className="menu-arr">›</div>
         </div>
-        <div className="menu-item" onClick={() => { if(confirm('Sign out?')) localStorage.removeItem('cgi_user'); window.location.reload(); }}>
-          <div className="menu-icon">🚪</div>
-          <div className="menu-label" style={{color:'var(--primary)'}}>{tr(lang,'profile','signOut')}</div>
-          <div className="menu-arrow" style={{color:'var(--primary)'}}>›</div>
+        <div className="menu-item" onClick={()=>{if(confirm('Sign out?')){localStorage.removeItem('cgi_user');window.location.reload();}}}>
+          <div className="menu-ic">🚪</div><div className="menu-lbl" style={{color:'var(--red)'}}>{tr(lang,'prof','signOut')}</div><div className="menu-arr" style={{color:'var(--red)'}}>›</div>
         </div>
       </div>
     </div>
   );
 }
 
-// MARKETER DASHBOARD
-function MarketerPage({ onBack }) {
-  const { lang } = useContext(Ctx);
-  const maxAge = Math.max(...MARKETER.age.map(a => a.pct));
+// ── MARKETER DASHBOARD ────────────────────────────────────────────
 
-  // Simple SVG donut
-  const donutR = 40, donutC = 50;
-  const circumference = 2 * Math.PI * donutR;
-  let offset = 0;
-  const donutSlices = MARKETER.cats.map(c => {
-    const len = (c.pct / 100) * circumference;
-    const slice = { ...c, offset, len };
-    offset += len;
-    return slice;
-  });
-
-  return (
+function MarketerDash({onBack}){
+  const {lang}=useContext(Ctx);
+  const maxAge=Math.max(...MKT.age.map(a=>a.p));
+  const circ=2*Math.PI*40;
+  let off=0;
+  const slices=MKT.cats.map(c=>{const len=(c.p/100)*circ;const s={...c,off,len};off+=len;return s;});
+  return(
     <div>
-      <div className="app-header">
+      <div className="header">
         <button className="icon-btn" onClick={onBack}>←</button>
-        <div style={{flex:1,textAlign:'center'}}>
-          <div style={{fontWeight:800,fontSize:'16px'}}>{tr(lang,'marketer','title')}</div>
-        </div>
-        <div style={{width:36}} />
+        <div className="header-title" style={{textAlign:'center'}}>{tr(lang,'mkt','title')}</div>
+        <div style={{width:36}}/>
       </div>
-      <div className="marketer-page">
-        <div className="marketer-hero">
-          <div className="marketer-hero-title">📊 {tr(lang,'marketer','title')}</div>
-          <div className="marketer-hero-sub">{tr(lang,'marketer','subtitle')}</div>
-          <div style={{marginTop:'12px',fontSize:'12px',opacity:.7}}>Last updated: Today, 9:00 AM</div>
+      <div className="mkt-page">
+        <div className="mkt-hero">
+          <div className="mkt-t">📊 {tr(lang,'mkt','title')}</div>
+          <div className="mkt-s">{tr(lang,'mkt','sub')}</div>
+          <div style={{marginTop:10,fontSize:11,opacity:.65}}>Updated: Today, 9:00 AM</div>
         </div>
-
         <div className="stats-grid">
-          {MARKETER.stats.map((s,i) => (
-            <div key={i} className="stat-card">
-              <div className="stat-card-icon">{s.icon}</div>
-              <div className="stat-card-val">{s.val}</div>
-              <div className="stat-card-lbl">{s.label}</div>
+          {MKT.stats.map((s,i)=>(
+            <div key={i} className="s-card">
+              <div className="s-ic">{s.ic}</div>
+              <div className="s-val">{s.val}</div>
+              <div className="s-lbl">{s.lbl}</div>
             </div>
           ))}
         </div>
-
-        <div className="chart-card">
-          <div className="chart-title">{tr(lang,'marketer','ageDist')}</div>
-          <div className="bar-chart">
-            {MARKETER.age.map(a => (
-              <div key={a.lbl} className="bar-grp">
-                <div className="bar-val">{a.pct}%</div>
-                <div className="bar-fill" style={{
-                  height: `${(a.pct / maxAge) * 60}px`,
-                  background: `linear-gradient(to top, var(--primary), var(--primary-light))`
-                }} />
-                <div className="bar-lbl">{a.lbl}</div>
+        <div className="ch-card">
+          <div className="ch-t">{tr(lang,'mkt','age')}</div>
+          <div className="bar-ch">
+            {MKT.age.map(a=>(
+              <div key={a.l} className="bg">
+                <div className="bv">{a.p}%</div>
+                <div className="bf" style={{height:`${(a.p/maxAge)*60}px`,background:'linear-gradient(to top,var(--red),var(--red-l))'}}/>
+                <div className="bl">{a.l}</div>
               </div>
             ))}
           </div>
         </div>
-
-        <div className="chart-card">
-          <div className="chart-title">{tr(lang,'marketer','catBreak')}</div>
-          <div className="donut-wrap">
+        <div className="ch-card">
+          <div className="ch-t">{tr(lang,'mkt','cat')}</div>
+          <div className="donut-w">
             <svg width="100" height="100" viewBox="0 0 100 100">
-              {donutSlices.map((s,i) => (
-                <circle key={i} cx={donutC} cy={donutC} r={donutR}
-                  fill="none" stroke={s.color} strokeWidth="18"
-                  strokeDasharray={`${s.len} ${circumference - s.len}`}
-                  strokeDashoffset={-s.offset}
-                  transform={`rotate(-90 ${donutC} ${donutC})`}
-                />
+              {slices.map((s,i)=>(
+                <circle key={i} cx="50" cy="50" r="40" fill="none" stroke={s.c} strokeWidth="18"
+                  strokeDasharray={`${s.len} ${circ-s.len}`}
+                  strokeDashoffset={-s.off}
+                  transform="rotate(-90 50 50)"/>
               ))}
-              <text x="50" y="54" textAnchor="middle" fontSize="11" fontWeight="700" fill="var(--text)">100%</text>
             </svg>
             <div className="legend">
-              {MARKETER.cats.map(c => (
-                <div key={c.lbl} className="legend-row">
-                  <div className="legend-dot" style={{background:c.color}} />
-                  <span>{c.lbl}</span>
-                  <span className="legend-pct">{c.pct}%</span>
+              {MKT.cats.map(c=>(
+                <div key={c.l} className="leg-r">
+                  <div className="leg-d" style={{background:c.c}}/>
+                  <span>{c.l}</span><span className="leg-p">{c.p}%</span>
                 </div>
               ))}
             </div>
           </div>
         </div>
-
-        <div className="chart-card">
-          <div className="chart-title">{tr(lang,'marketer','zonePop')}</div>
-          {MARKETER.zones.map(z => (
-            <div key={z.lbl} style={{marginBottom:'10px'}}>
-              <div style={{display:'flex',justifyContent:'space-between',fontSize:'12px',marginBottom:'4px'}}>
-                <span style={{color:'var(--text-2)',fontWeight:500}}>📍 {z.lbl}</span>
-                <span style={{color:'var(--text)',fontWeight:700}}>{z.pct}%</span>
-              </div>
-              <div style={{height:'6px',background:'var(--border)',borderRadius:'3px',overflow:'hidden'}}>
-                <div style={{height:'100%',width:`${z.pct}%`,background:'var(--primary)',borderRadius:'3px',transition:'width .5s'}} />
-              </div>
+        <div className="ch-card">
+          <div className="ch-t">{tr(lang,'mkt','zone')}</div>
+          {MKT.zones.map(z=>(
+            <div key={z.l} className="zone-row">
+              <div className="zone-hd"><span style={{color:'var(--t2)',fontWeight:500}}>📍 {z.l}</span><span style={{fontWeight:700}}>{z.p}%</span></div>
+              <div className="zone-bar"><div className="zone-fill" style={{width:`${z.p}%`}}/></div>
             </div>
           ))}
         </div>
-
-        <div className="chart-card">
-          <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',marginBottom:'14px'}}>
-            <div className="chart-title" style={{marginBottom:0}}>{tr(lang,'marketer','campaigns')}</div>
-            <button className="btn btn-primary btn-sm" onClick={() => alert('Campaign creation coming soon!')}>
-              {tr(lang,'marketer','newCampaign')}
-            </button>
+        <div className="ch-card">
+          <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',marginBottom:13}}>
+            <div className="ch-t" style={{marginBottom:0}}>{tr(lang,'mkt','camps')}</div>
+            <button className="btn btn-red btn-sm" onClick={()=>alert('Campaign builder coming soon!')}>{tr(lang,'mkt','newCamp')}</button>
           </div>
-          <div className="campaign-list">
-            {MARKETER.campaigns.map((c,i) => (
-              <div key={i} className="campaign-item">
-                <div className="campaign-dot" style={{background:c.color}} />
-                <div style={{flex:1}}>
-                  <div className="campaign-name">{c.name}</div>
-                  <div className="campaign-reach" style={{fontSize:'11px',marginTop:'2px'}}>
-                    Reach: {c.reach} · {c.status === 'active' ? '🟢 Active' : '🟡 Paused'}
-                  </div>
-                </div>
+          {MKT.camps.map((c,i)=>(
+            <div key={i} className="cmp-item">
+              <div className="cmp-dot" style={{background:c.c}}/>
+              <div style={{flex:1}}>
+                <div style={{fontWeight:600,fontSize:13}}>{c.n}</div>
+                <div style={{fontSize:11,color:'var(--t2)',marginTop:2}}>Reach: {c.reach} · {c.st==='active'?'🟢 Active':'🟡 Paused'}</div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
   );
 }
 
-// ───────────── APP ROOT ─────────────
+// ── BOOKING CONFIRM SHEET ─────────────────────────────────────────
 
-function App() {
-  const saved = (() => {
-    try { return JSON.parse(localStorage.getItem('cgi_user') || 'null'); } catch { return null; }
-  })();
+function BookSheet({ev,onYes,onNo}){
+  const {lang}=useContext(Ctx);
+  return(
+    <div className="overlay" onClick={onNo}>
+      <div className="sheet" onClick={e=>e.stopPropagation()}>
+        <div className="sheet-handle"/>
+        <div className="sheet-em">🎟️</div>
+        <div className="sheet-t">{tr(lang,'det','confirmQ')}</div>
+        <div className="sheet-s">{tr(lang,'det','confirmS')}</div>
+        <div className="sheet-btns">
+          <button className="btn btn-green btn-w btn-lg" onClick={onYes}>{tr(lang,'det','yes')}</button>
+          <button className="btn btn-ghost btn-w btn-lg" onClick={onNo}>{tr(lang,'det','notYet')}</button>
+        </div>
+      </div>
+    </div>
+  );
+}
 
-  const [user, setUser] = useState(saved);
-  const [lang, setLang] = useState(saved?.lang || 'en');
-  const [page, setPage] = useState('home');  // home|explore|notifications|profile|event-detail|group-booking|marketer
-  const [selectedEvent, setSelectedEvent] = useState(null);
-  const [notifs, setNotifs] = useState(NOTIFS_INIT);
-  const [bookingEvent, setBookingEvent] = useState(null);
-  const [toast, setToast] = useState(null);
-  const toastTimer = useRef(null);
+// ── APP ROOT ──────────────────────────────────────────────────────
 
-  function showToast(msg) {
-    setToast(msg);
-    clearTimeout(toastTimer.current);
-    toastTimer.current = setTimeout(() => setToast(null), 2800);
+function App(){
+  const stored=useMemo(()=>{try{return JSON.parse(localStorage.getItem('cgi_user')||'null');}catch{return null;}},[]);
+  const [user,setUser]=useState(stored);
+  const [lang,setLangState]=useState(stored?.lang||'en');
+  const [page,setPage]=useState('home'); // home|explore|saved|alerts|profile|event|group|marketer|prefs
+  const [selEv,setSelEv]=useState(null);
+  const [notifs,setNotifs]=useState(NOTIFS_0);
+  const [bookEv,setBookEv]=useState(null);
+  const [saved,setSaved]=useState(()=>{try{return new Set(JSON.parse(localStorage.getItem('cgi_saved')||'[]'));}catch{return new Set();}});
+  const [toast,setToast]=useState(null);
+  const toastRef=useRef(null);
+  // App-level filters (shared between Home and Explore navigate-to-home)
+  const [filters,setFilters]=useState({cat:'all',zone:'all',date:'',search:''});
+
+  function setLang(l){
+    setLangState(l);
+    if(user){const u={...user,lang:l};setUser(u);localStorage.setItem('cgi_user',JSON.stringify(u));}
   }
 
-  function handleOnboardingComplete(data) {
-    const newUser = { ...data, onboarded: true };
-    setUser(newUser);
-    setLang(data.lang || 'en');
-    localStorage.setItem('cgi_user', JSON.stringify(newUser));
+  function showToast(msg){
+    setToast(msg);clearTimeout(toastRef.current);
+    toastRef.current=setTimeout(()=>setToast(null),2800);
+  }
+
+  function toggleSave(id){
+    setSaved(p=>{
+      const next=new Set(p);
+      if(next.has(id)){next.delete(id);showToast('Removed from saved');}
+      else{next.add(id);showToast('❤️ Saved!');}
+      localStorage.setItem('cgi_saved',JSON.stringify([...next]));
+      return next;
+    });
+  }
+
+  function handleOnboardDone(data){
+    const u={...data,onboarded:true};
+    setUser(u);setLangState(data.lang||'en');
+    localStorage.setItem('cgi_user',JSON.stringify(u));
     setPage('home');
   }
 
-  function handleSetLang(l) {
-    setLang(l);
-    if (user) {
-      const updated = { ...user, lang: l };
-      setUser(updated);
-      localStorage.setItem('cgi_user', JSON.stringify(updated));
-    }
+  function handleSavePrefs(data){
+    const u={...user,...data};setUser(u);
+    localStorage.setItem('cgi_user',JSON.stringify(u));
+    setPage('profile');showToast('Preferences saved!');
   }
 
-  function openEventDetail(event) {
-    setSelectedEvent(event);
-    setPage('event-detail');
+  function openEvent(ev){setSelEv(ev);setPage('event');}
+  function openGroup(ev){setSelEv(ev);setPage('group');}
+
+  function handleBook(ev){
+    setBookEv(ev);
+    window.open(ev.burl,'_blank');
   }
 
-  function openGroupBooking(event) {
-    setSelectedEvent(event);
-    setPage('group-booking');
+  function handleGroupBook(ev,members){
+    setBookEv(ev);
+    window.open(ev.burl,'_blank');
+    setPage('event');
   }
 
-  function handleBook(event) {
-    setBookingEvent(event);
-    window.open(event.bookingUrl, '_blank');
+  function handleBookYes(){
+    showToast(`Booking confirmed for "${bookEv?.title}"!`);
+    setNotifs(p=>[{id:Date.now(),unread:true,icon:'🎟️',bg:'#F0FFF4',title:'Booking recorded!',body:`Your booking for "${bookEv?.title}" has been noted.`,time:'Just now'},...p]);
+    setBookEv(null);
   }
 
-  function handleGroupBook(event, members) {
-    setBookingEvent(event);
-    window.open(event.bookingUrl, '_blank');
-    setPage('event-detail');
-  }
-
-  function handleBookingYes() {
-    showToast(`✓ Booking confirmed for "${bookingEvent?.title}"!`);
-    setBookingEvent(null);
-    // Add a confirmation notification
-    setNotifs(p => [{
-      id: Date.now(), type:'group', unread:true, icon:'🎟️', iconBg:'#F0FFF4',
-      title: 'Booking confirmed!',
-      body: `Your booking for "${bookingEvent?.title}" was recorded.`,
-      time: 'Just now'
-    }, ...p]);
-  }
-
-  function handleBookingNo() {
-    setBookingEvent(null);
-    showToast('No worries! Come back anytime.');
-  }
-
-  function handleCatFilter(cat, zone) {
-    setPage('home');
-    // We pass this through a different mechanism
-    // For simplicity, navigate home and user can filter there
-  }
-
-  const unreadCount = notifs.filter(n => n.unread).length;
-  const ctxValue = { user, lang, setLang: handleSetLang, notifs, setNotifs };
-
-  if (!user) {
-    return (
-      <Ctx.Provider value={ctxValue}>
-        <OnboardingPage onComplete={handleOnboardingComplete} />
-      </Ctx.Provider>
-    );
-  }
-
-  const navItems = [
-    { id:'home',          icon:'🏠', label: tr(lang,'home') },
-    { id:'explore',       icon:'🔍', label: tr(lang,'explore') },
-    { id:'notifications', icon:'🔔', label: tr(lang,'alerts'), badge: unreadCount > 0 },
-    { id:'profile',       icon:'👤', label: tr(lang,'profile') },
+  const ctx={user,lang,setLang,notifs,setNotifs,saved,toggleSave};
+  const unread=notifs.filter(n=>n.unread).length;
+  const navItems=[
+    {id:'home',icon:'🏠',label:tr(lang,'home')},
+    {id:'explore',icon:'🔍',label:tr(lang,'explore')},
+    {id:'saved',icon:'❤️',label:tr(lang,'saved')},
+    {id:'alerts',icon:'🔔',label:tr(lang,'alerts'),badge:unread>0},
   ];
 
-  const showHeader = !['event-detail','group-booking','marketer'].includes(page);
-  const showNav    = !['group-booking','marketer'].includes(page);
+  // Pages that replace the whole screen (no shared header/nav)
+  const fullScreen=['event','group','marketer','prefs'];
+  const showHeader=!fullScreen.includes(page);
+  const showNav=!fullScreen.includes(page);
 
-  return (
-    <Ctx.Provider value={ctxValue}>
+  if(!user){
+    return <Ctx.Provider value={ctx}><Onboarding onDone={handleOnboardDone}/></Ctx.Provider>;
+  }
+
+  const headerTitle=
+    page==='alerts'?tr(lang,'notif','title'):
+    page==='profile'?tr(lang,'prof','title'):
+    page==='explore'?tr(lang,'explore'):
+    page==='saved'?tr(lang,'savedPage','title'):
+    '🎉 '+tr(lang,'app').slice(0,14)+'…';
+
+  return(
+    <Ctx.Provider value={ctx}>
       <div className="app">
-        {showHeader && (
-          <div className="app-header">
-            <div className="header-left">
-              <div className="header-title">
-                {page === 'notifications' ? tr(lang,'notifs','title') :
-                 page === 'profile' ? tr(lang,'profile','title') :
-                 page === 'explore' ? tr(lang,'explore') :
-                 '🎉 ' + tr(lang,'appName').slice(0,14) + '…'}
-              </div>
-              {page === 'home' && (
-                <div className="header-sub">
-                  📍 {user.city === 'chennai' ? tr(lang,'onb','chennai') : tr(lang,'onb','bangalore')}
-                </div>
-              )}
+        {showHeader&&(
+          <div className="header">
+            <div style={{flex:1}}>
+              <div className="header-title">{headerTitle}</div>
+              {page==='home'&&<div className="header-sub">📍 {user.city==='chennai'?tr(lang,'ob','chennai'):tr(lang,'ob','blr')}</div>}
             </div>
-            <div className="header-actions">
-              {page === 'home' && (
-                <button className="icon-btn" title="Change language"
-                  onClick={() => handleSetLang(lang === 'en' ? 'ta' : lang === 'ta' ? 'hi' : 'en')}>
-                  🌐
-                </button>
-              )}
-            </div>
+            {page==='home'&&(
+              <button className="icon-btn" title="Switch language"
+                onClick={()=>setLang(lang==='en'?'ta':lang==='ta'?'hi':'en')}>🌐</button>
+            )}
+            <button className="icon-btn" onClick={()=>setPage('profile')}>👤</button>
           </div>
         )}
 
         <div className="content">
-          {page === 'home' && (
-            <HomePage onDetail={openEventDetail} onBook={handleBook} />
-          )}
-          {page === 'explore' && (
-            <ExplorePage onCatFilter={handleCatFilter} />
-          )}
-          {page === 'notifications' && (
-            <NotificationsPage />
-          )}
-          {page === 'profile' && (
-            <ProfilePage
-              onMarketer={() => setPage('marketer')}
-              onEditPrefs={() => { setUser(null); localStorage.removeItem('cgi_user'); }}
-            />
-          )}
-          {page === 'event-detail' && selectedEvent && (
-            <EventDetailPage
-              event={selectedEvent}
-              onBack={() => setPage('home')}
-              onBook={handleBook}
-              onGroupBook={openGroupBooking}
-            />
-          )}
-          {page === 'group-booking' && selectedEvent && (
-            <GroupBookingPage
-              event={selectedEvent}
-              onBack={() => setPage('event-detail')}
-              onBook={handleGroupBook}
-            />
-          )}
-          {page === 'marketer' && (
-            <MarketerPage onBack={() => setPage('profile')} />
-          )}
+          {page==='home'&&<HomePage filters={filters} setFilters={setFilters} onDetail={openEvent} onBook={handleBook}/>}
+          {page==='explore'&&<ExplorePage filters={filters} setFilters={setFilters} onDetail={openEvent} onBook={handleBook}/>}
+          {page==='saved'&&<SavedPage onDetail={openEvent} onBook={handleBook}/>}
+          {page==='alerts'&&<AlertsPage/>}
+          {page==='profile'&&<ProfilePage onMarketer={()=>setPage('marketer')} onPrefs={()=>setPage('prefs')}/>}
+          {page==='event'&&selEv&&<EventDetail ev={selEv} onBack={()=>setPage('home')} onBook={handleBook} onGroupBook={openGroup}/>}
+          {page==='group'&&selEv&&<GroupBooking ev={selEv} onBack={()=>setPage('event')} onBook={handleGroupBook}/>}
+          {page==='marketer'&&<MarketerDash onBack={()=>setPage('profile')}/>}
+          {page==='prefs'&&<PrefsPage onBack={()=>setPage('profile')} onSave={handleSavePrefs}/>}
         </div>
 
-        {showNav && (
-          <nav className="bottom-nav">
-            {navItems.map(n => (
-              <button key={n.id} className={`nav-btn ${page === n.id ? 'active' : ''}`} onClick={() => setPage(n.id)}>
+        {showNav&&(
+          <nav className="nav">
+            {navItems.map(n=>(
+              <button key={n.id} className={`nav-btn${page===n.id?' on':''}`} onClick={()=>setPage(n.id)}>
                 <span className="nav-icon">
-                  {n.badge ? <span style={{position:'relative',display:'inline-block'}}>{n.icon}<span className="notif-dot"/></span> : n.icon}
+                  {n.badge?<span style={{position:'relative',display:'inline-block'}}>{n.icon}<span className="n-dot"/></span>:n.icon}
                 </span>
                 <span className="nav-label">{n.label}</span>
               </button>
@@ -1496,17 +1399,14 @@ function App() {
           </nav>
         )}
 
-        {bookingEvent && (
-          <BookingSheet event={bookingEvent} onYes={handleBookingYes} onNo={handleBookingNo} lang={lang} />
-        )}
-
-        {toast && <div className="toast">{toast}</div>}
+        {bookEv&&<BookSheet ev={bookEv} onYes={handleBookYes} onNo={()=>setBookEv(null)}/>}
+        {toast&&<Toast msg={toast}/>}
       </div>
     </Ctx.Provider>
   );
 }
 
-ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
 </script>
 </body>
 </html>
